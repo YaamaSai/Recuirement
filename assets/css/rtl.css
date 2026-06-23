@@ -1,0 +1,33 @@
+/* ==========================================================================
+   RTL Layout Support
+   ========================================================================== */
+
+[dir="rtl"] {
+  /* Typography direction */
+  text-align: right;
+}
+
+[dir="rtl"] .nav-menu {
+  /* Invert margin/padding if any specific to LTR exists */
+}
+
+/* Utility classes for RTL */
+[dir="rtl"] .mr-auto {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Adjusting forms */
+[dir="rtl"] .form-control {
+  text-align: right;
+}
+
+/* Adjusting icons if any directional icons are used */
+[dir="rtl"] .icon-forward {
+  transform: rotate(180deg);
+}

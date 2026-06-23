@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard | RecruitPro</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/dashboard.js" defer></script>
+
+    <script>document.documentElement.dir = localStorage.getItem('dir') || 'ltr';</script>
+</head>
+
+<body>
+
+
+
+    <div class="dashboard-layout">
+        <!-- ============ SIDEBAR ============ -->
+        <aside class="sidebar">
+            <div class="sidebar-header" style="padding: var(--s4); border-bottom: 1px solid var(--border-light); position: relative;">
+                <button class="sidebar-close-btn" aria-label="Close Menu" style="position: absolute; top: 50%; right: var(--s4); transform: translateY(-50%); background: none; border: none; color: var(--text-secondary); cursor: pointer; display: none;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <a href="index.html" class="nav-brand"
+                    style="margin-bottom: var(--s2); display: inline-block;">Recruit<span>Pro</span>.</a>
+                <p
+                    style="font-size: 0.8125rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0;">
+                    Employer Portal</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="tab-link active" data-target="overview">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg> Overview
+                </a></li>
+                <li><a href="#" class="tab-link" data-target="manage-jobs">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Manage Jobs
+                </a></li>
+                <li><a href="#" class="tab-link" data-target="applicants">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Applicants
+                </a></li>
+                <li><a href="#" class="tab-link" data-target="post-job">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Post New Job
+                </a></li>
+                <li><a href="#" class="tab-link" data-target="company-profile">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Company Profile
+                </a></li>
+                <li><a href="#" class="tab-link" data-target="settings">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> Settings
+                </a></li>
+                <li style="display: flex; margin: var(--s3) var(--s4) 0 var(--s4); background: var(--bg-alt); border-radius: var(--r-md); overflow: hidden;">
+                    <button class="rtl-toggle-btn" aria-label="Toggle RTL" style="flex: 1; width: auto; border: none; border-radius: 0; background: transparent;">RTL</button>
+                    <div style="width: 1px; background: var(--border-light); margin: 8px 0;"></div>
+                    <button class="theme-toggle-btn" aria-label="Toggle Theme" style="flex: 1; width: auto; border: none; border-radius: 0; background: transparent;">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+            <div class="sidebar-footer"
+                style="padding: var(--s4); border-top: 1px solid var(--border-light); display: flex; align-items: center; justify-content: center; margin-top: auto;">
+                <a href="index.html" class="btn btn-danger"
+                    style="padding: var(--s2) var(--s4); font-size: 0.875rem; width: 100%;">Logout</a>
+            </div>
+        </aside>
+
+        <!-- ============ MAIN CONTENT ============ -->
+        <main class="dashboard-content">
+            <!-- OVERVIEW TAB -->
+            <div id="overview" class="tab-pane active">
+                <div style="display: flex; flex-direction: column; gap: var(--s5);">
+                <div class="dashboard-header-sticky">
+                    <div>
+                        <h2>Company Overview <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-4-4-6 6"></path></svg></h2>
+                        <p class="header-subtext" style="margin-bottom: 0;">Your recruitment pipeline at a glance.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--s3);">
+                        <div style="text-align: right;" class="mobile-hide">
+                            <p style="margin: 0; font-weight: 600; font-size: 0.9375rem;">Sarah Smith</p>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary);">HR Manager</p>
+                        </div>
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--info)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; box-shadow: var(--shadow-sm);">SS</div>
+                    </div>
+                </div>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: var(--s4);">
+                        <div class="dashboard-stat-card">
+                            <h3 style="color: var(--primary);" data-count="12">0</h3>
+                            <p style="margin: 0; font-size: 0.9375rem;">Active Postings</p>
+                        </div>
+                        <div class="dashboard-stat-card">
+                            <h3 style="color: var(--success);" data-count="342">0</h3>
+                            <p style="margin: 0; font-size: 0.9375rem;">Total Applicants</p>
+                        </div>
+                        <div class="dashboard-stat-card">
+                            <h3 style="color: var(--info);" data-count="24">0</h3>
+                            <p style="margin: 0; font-size: 0.9375rem;">Interviews Scheduled</p>
+                        </div>
+                        <div class="dashboard-stat-card">
+                            <h3 style="color: var(--warning);" data-count="8">0</h3>
+                            <p style="margin: 0; font-size: 0.9375rem;">Offers Extended</p>
+                        </div>
+                    </div>
+
+                    <!-- Pipeline Overview -->
+                    <div class="card">
+                        <h3 style="margin-bottom: var(--s4);">Hiring Pipeline</h3>
+                        <div style="display: flex; gap: var(--s2); flex-wrap: wrap;">
+                            <div
+                                style="flex: 1; min-width: 120px; text-align: center; padding: var(--s4); background: var(--bg-alt); border-radius: var(--r-lg);">
+                                <div
+                                    style="font-size: 1.75rem; font-weight: 800; color: var(--primary); margin-bottom: var(--s1);">
+                                    342</div>
+                                <div
+                                    style="font-size: 0.75rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+                                    Applied</div>
+                            </div>
+                            <div style="display: flex; align-items: center; color: var(--text-tertiary);">→</div>
+                            <div
+                                style="flex: 1; min-width: 120px; text-align: center; padding: var(--s4); background: var(--bg-alt); border-radius: var(--r-lg);">
+                                <div
+                                    style="font-size: 1.75rem; font-weight: 800; color: var(--info); margin-bottom: var(--s1);">
+                                    118</div>
+                                <div
+                                    style="font-size: 0.75rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+                                    Screened</div>
+                            </div>
+                            <div style="display: flex; align-items: center; color: var(--text-tertiary);">→</div>
+                            <div
+                                style="flex: 1; min-width: 120px; text-align: center; padding: var(--s4); background: var(--bg-alt); border-radius: var(--r-lg);">
+                                <div
+                                    style="font-size: 1.75rem; font-weight: 800; color: var(--success); margin-bottom: var(--s1);">
+                                    24</div>
+                                <div
+                                    style="font-size: 0.75rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+                                    Interview</div>
+                            </div>
+                            <div style="display: flex; align-items: center; color: var(--text-tertiary);">→</div>
+                            <div
+                                style="flex: 1; min-width: 120px; text-align: center; padding: var(--s4); background: var(--bg-alt); border-radius: var(--r-lg);">
+                                <div
+                                    style="font-size: 1.75rem; font-weight: 800; color: var(--warning); margin-bottom: var(--s1);">
+                                    8</div>
+                                <div
+                                    style="font-size: 0.75rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+                                    Offered</div>
+                            </div>
+                            <div style="display: flex; align-items: center; color: var(--text-tertiary);">→</div>
+                            <div
+                                style="flex: 1; min-width: 120px; text-align: center; padding: var(--s4); background: var(--bg-alt); border-radius: var(--r-lg);">
+                                <div
+                                    style="font-size: 1.75rem; font-weight: 800; color: var(--accent); margin-bottom: var(--s1);">
+                                    5</div>
+                                <div
+                                    style="font-size: 0.75rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+                                    Hired</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Two Column Dashboard Overview Sections -->
+                    <div class="dashboard-grid-layout">
+                        <!-- LEFT COLUMN -->
+                        <div style="display: flex; flex-direction: column; gap: var(--s5);">
+
+                            <!-- Candidate Sourcing Channels -->
+                            <div class="card">
+                                <h3 style="margin-bottom: var(--s4);">Candidate Sourcing Channels</h3>
+                                <div style="display: flex; flex-direction: column; gap: var(--s3);">
+                                    <div>
+                                        <div
+                                            class="sourcing-stats-text" style="display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 4px;">
+                                            <span style="font-weight: 500;">LinkedIn Recruiter</span>
+                                            <span style="color: var(--text-secondary);">184 candidates (54%)</span>
+                                        </div>
+                                        <div
+                                            style="height: 10px; background: var(--border-light); border-radius: 5px; overflow: hidden;">
+                                            <div
+                                                style="width: 54%; height: 100%; background: #0A66C2; border-radius: 5px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="sourcing-stats-text" style="display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 4px;">
+                                            <span style="font-weight: 500;">RecruitPro Portal</span>
+                                            <span style="color: var(--text-secondary);">96 candidates (28%)</span>
+                                        </div>
+                                        <div
+                                            style="height: 10px; background: var(--border-light); border-radius: 5px; overflow: hidden;">
+                                            <div
+                                                style="width: 28%; height: 100%; background: var(--primary); border-radius: 5px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="sourcing-stats-text" style="display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 4px;">
+                                            <span style="font-weight: 500;">Direct Referrals</span>
+                                            <span style="color: var(--text-secondary);">42 candidates (12%)</span>
+                                        </div>
+                                        <div
+                                            style="height: 10px; background: var(--border-light); border-radius: 5px; overflow: hidden;">
+                                            <div
+                                                style="width: 12%; height: 100%; background: var(--success); border-radius: 5px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="sourcing-stats-text" style="display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 4px;">
+                                            <span style="font-weight: 500;">Organic Career Site</span>
+                                            <span style="color: var(--text-secondary);">20 candidates (6%)</span>
+                                        </div>
+                                        <div
+                                            style="height: 10px; background: var(--border-light); border-radius: 5px; overflow: hidden;">
+                                            <div
+                                                style="width: 6%; height: 100%; background: var(--warning); border-radius: 5px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Scheduled Interviews Panel -->
+                            <div class="card">
+                                <h3 style="margin-bottom: var(--s4);">Scheduled Interviews Today</h3>
+                                <div style="display: flex; flex-direction: column; gap: var(--s3);">
+                                    <div
+                                        style="display: flex; justify-content: space-between; align-items: center; padding: 12px; border: 1px solid var(--border-light); border-radius: var(--r-md); background: var(--bg-alt);">
+                                        <div>
+                                            <h4 style="margin: 0; font-size: 0.875rem;">John Doe (Technical)</h4>
+                                            <p
+                                                style="margin: 2px 0 0 0; font-size: 0.75rem; color: var(--text-secondary);">
+                                                Senior Frontend Engineer • Room A</p>
+                                        </div>
+                                        <span
+                                            style="font-size: 0.8125rem; font-weight: 600; color: var(--primary);">2:00
+                                            PM</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; justify-content: space-between; align-items: center; padding: 12px; border: 1px solid var(--border-light); border-radius: var(--r-md); background: var(--bg-alt);">
+                                        <div>
+                                            <h4 style="margin: 0; font-size: 0.875rem;">Sarah Kim (Behavioral)</h4>
+                                            <p
+                                                style="margin: 2px 0 0 0; font-size: 0.75rem; color: var(--text-secondary);">
+                                                Product Manager • Room B</p>
+                                        </div>
+                                        <span
+                                            style="font-size: 0.8125rem; font-weight: 600; color: var(--primary);">3:30
+                                            PM</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; justify-content: space-between; align-items: center; padding: 12px; border: 1px solid var(--border-light); border-radius: var(--r-md); background: var(--bg-alt);">
+                                        <div>
+                                            <h4 style="margin: 0; font-size: 0.875rem;">David Lee (System Design)</h4>
+                                            <p
+                                                style="margin: 2px 0 0 0; font-size: 0.75rem; color: var(--text-secondary);">
+                                                DevOps Engineer • Online</p>
+                                        </div>
+                                        <span
+                                            style="font-size: 0.8125rem; font-weight: 600; color: var(--primary);">5:00
+                                            PM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- RIGHT COLUMN -->
+                        <div style="display: flex; flex-direction: column; gap: var(--s5);">
+
+                            <!-- Recent Activity -->
+                            <div class="card">
+                                <h3 style="margin-bottom: var(--s4);">Recent Activity</h3>
+                                <div style="display: flex; flex-direction: column; gap: var(--s3);">
+                                    <div
+                                        style="display: flex; gap: var(--s2); align-items: center; padding: var(--s2) 0; border-bottom: 1px solid var(--border-light);">
+                                        <div
+                                            style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;">
+                                        </div>
+                                        <p style="margin: 0; font-size: 0.8125rem; flex: 1;"><strong>John Doe</strong>
+                                            applied (Frontend)</p>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">2h ago</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; gap: var(--s2); align-items: center; padding: var(--s2) 0; border-bottom: 1px solid var(--border-light);">
+                                        <div
+                                            style="width: 8px; height: 8px; border-radius: 50%; background: var(--primary); flex-shrink: 0;">
+                                        </div>
+                                        <p style="margin: 0; font-size: 0.8125rem; flex: 1;"><strong>Sarah Kim</strong>
+                                            passed screen (Product)</p>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">5h ago</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; gap: var(--s2); align-items: center; padding: var(--s2) 0; border-bottom: 1px solid var(--border-light);">
+                                        <div
+                                            style="width: 8px; height: 8px; border-radius: 50%; background: var(--warning); flex-shrink: 0;">
+                                        </div>
+                                        <p style="margin: 0; font-size: 0.8125rem; flex: 1;"><strong>Alex Chen</strong>
+                                            offer sent (Data Science)</p>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">1d ago</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; gap: var(--s2); align-items: center; padding: var(--s2) 0; border-bottom: 1px solid var(--border-light);">
+                                        <div
+                                            style="width: 8px; height: 8px; border-radius: 50%; background: var(--error); flex-shrink: 0;">
+                                        </div>
+                                        <p style="margin: 0; font-size: 0.8125rem; flex: 1;"><strong>Maria
+                                                Garcia</strong> withdrew (Devops)</p>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">2d ago</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; gap: var(--s2); align-items: center; padding: var(--s2) 0; border-bottom: 1px solid var(--border-light);">
+                                        <div
+                                            style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;">
+                                        </div>
+                                        <p style="margin: 0; font-size: 0.8125rem; flex: 1;"><strong>David
+                                                Smith</strong> applied (DevOps)</p>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">3d ago</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; gap: var(--s2); align-items: center; padding: var(--s2) 0; border-bottom: 1px solid var(--border-light);">
+                                        <div
+                                            style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0;">
+                                        </div>
+                                        <p style="margin: 0; font-size: 0.8125rem; flex: 1;"><strong>Elena
+                                                Rostova</strong> applied (UX Design)</p>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">4d ago</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; gap: var(--s2); align-items: center; padding: var(--s2) 0;">
+                                        <div
+                                            style="width: 8px; height: 8px; border-radius: 50%; background: var(--info); flex-shrink: 0;">
+                                        </div>
+                                        <p style="margin: 0; font-size: 0.8125rem; flex: 1;"><strong>Hiring
+                                                Team</strong> updated templates</p>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">5d ago</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MANAGE JOBS TAB -->
+            <div id="manage-jobs" class="tab-pane">
+                <div style="display: flex; flex-direction: column; gap: var(--s5);">
+                <div class="dashboard-header-sticky">
+                    <div>
+                        <h2>Manage Job Postings <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></h2>
+                        <p style="margin-bottom: 0;">Track, edit, and optimize your active and closed job openings.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--s3);">
+                        <div style="text-align: right;" class="mobile-hide">
+                            <p style="margin: 0; font-weight: 600; font-size: 0.9375rem;">Sarah Smith</p>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary);">HR Manager</p>
+                        </div>
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--info)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; box-shadow: var(--shadow-sm);">SS</div>
+                    </div>
+                </div>
+
+                    <!-- Job Openings Metrics -->
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: var(--s4);">
+                        <div class="card"
+                            style="padding: var(--s4); display: flex; align-items: center; gap: var(--s3); background: var(--bg-alt); border: 1px solid var(--border-light);">
+                            <div style="font-size: 2rem; color: var(--primary); display: flex; align-items: center; justify-content: center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1.5rem; font-weight: 700;">12</h4>
+                                <p style="margin: 0; font-size: 0.8125rem; color: var(--text-secondary);">Active Job
+                                    Postings</p>
+                            </div>
+                        </div>
+                        <div class="card"
+                            style="padding: var(--s4); display: flex; align-items: center; gap: var(--s3); background: var(--bg-alt); border: 1px solid var(--border-light);">
+                            <div style="font-size: 2rem; color: var(--warning); display: flex; align-items: center; justify-content: center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg></div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1.5rem; font-weight: 700;">2</h4>
+                                <p style="margin: 0; font-size: 0.8125rem; color: var(--text-secondary);">Paused
+                                    Postings</p>
+                            </div>
+                        </div>
+                        <div class="card"
+                            style="padding: var(--s4); display: flex; align-items: center; gap: var(--s3); background: var(--bg-alt); border: 1px solid var(--border-light);">
+                            <div style="font-size: 2rem; color: var(--success); display: flex; align-items: center; justify-content: center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1.5rem; font-weight: 700;">342</h4>
+                                <p style="margin: 0; font-size: 0.8125rem; color: var(--text-secondary);">Total
+                                    Applications Received</p>
+                            </div>
+                        </div>
+                        <div class="card"
+                            style="padding: var(--s4); display: flex; align-items: center; gap: var(--s3); background: var(--bg-alt); border: 1px solid var(--border-light);">
+                            <div style="font-size: 2rem; color: var(--info); display: flex; align-items: center; justify-content: center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1.5rem; font-weight: 700;">22 Days</h4>
+                                <p style="margin: 0; font-size: 0.8125rem; color: var(--text-secondary);">Average Time
+                                    to Fill</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Listing Filters -->
+                    <div class="card"
+                        style="display: flex; gap: var(--s3); align-items: center; flex-wrap: wrap; justify-content: space-between;">
+                        <div style="display: flex; gap: var(--s2); align-items: center; flex: 1; min-width: 250px;">
+                            <input type="text" class="form-control" placeholder="Search postings by keyword..."
+                                style="margin: 0; max-width: 320px; flex: 1; min-width: 0;">
+                            <button class="btn btn-primary" style="padding: var(--s2) var(--s4);">Search</button>
+                        </div>
+                        <div style="display: flex; gap: var(--s3); align-items: center; flex-wrap: wrap;">
+                            <select class="form-control" style="margin: 0; width: 140px;">
+                                <option value="">All Statuses</option>
+                                <option value="active">Active</option>
+                                <option value="paused">Paused</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                            <select class="form-control" style="margin: 0; width: 160px;">
+                                <option value="">All Departments</option>
+                                <option value="eng">Engineering</option>
+                                <option value="prod">Product</option>
+                                <option value="des">Design</option>
+                                <option value="sales">Sales</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Job Table Card -->
+                    <div class="card">
+                        <h3 style="margin-bottom: var(--s4);">Active & Historic Postings</h3>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 800px;">
+                                <thead>
+                                    <tr style="border-bottom: 2px solid var(--border-light);">
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Job Title</th>
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Department</th>
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Status</th>
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Applicants</th>
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Posted Date</th>
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Senior Frontend
+                                            Engineer</td>
+                                        <td style="padding: var(--s3) var(--s2);">Engineering</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">45</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Jun 1,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Edit</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Product Manager</td>
+                                        <td style="padding: var(--s3) var(--s2);">Product</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">83</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">May 28,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Edit</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Backend Engineer
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);">Engineering</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">12</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Jun 10,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Edit</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">DevOps Engineer</td>
+                                        <td style="padding: var(--s3) var(--s2);">Engineering</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">5</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Jun 14,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Edit</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Data Scientist</td>
+                                        <td style="padding: var(--s3) var(--s2);">Engineering</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(255,149,0,0.1); color: var(--warning); font-size: 0.8125rem; font-weight: 600;">Paused</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">29</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">May 15,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Edit</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">UX Researcher</td>
+                                        <td style="padding: var(--s3) var(--s2);">Design</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(255,59,48,0.1); color: var(--error); font-size: 0.8125rem; font-weight: 600;">Closed</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">156</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Apr 10,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Reopen</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Mobile Tech Lead
+                                            (iOS & Android)</td>
+                                        <td style="padding: var(--s3) var(--s2);">Engineering</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">18</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Jun 12,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Edit</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Senior Site
+                                            Reliability Engineer</td>
+                                        <td style="padding: var(--s3) var(--s2);">Engineering</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">7</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Jun 13,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Edit</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Engineering Manager
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);">Engineering</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">24</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">May 20,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Edit</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Quality Assurance
+                                            Specialist</td>
+                                        <td style="padding: var(--s3) var(--s2);">Engineering</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(255,149,0,0.1); color: var(--warning); font-size: 0.8125rem; font-weight: 600;">Paused</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">31</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">May 05,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Resume</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Developer Advocate
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);">Marketing</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(255,59,48,0.1); color: var(--error); font-size: 0.8125rem; font-weight: 600;">Closed</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">94</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Feb 12,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Reopen</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Security Compliance
+                                            Officer</td>
+                                        <td style="padding: var(--s3) var(--s2);">Operations</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">3</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Jun 15,
+                                            2026</td>
+                                        <td style="padding: var(--s3) var(--s2); display: flex; gap: var(--s2);"><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Edit</button><button
+                                                class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem; background: var(--bg);">View</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Job Distribution channels -->
+                    <div class="card" style="padding: var(--s5);">
+                        <h3 style="margin-bottom: var(--s4);">External Distribution Boards</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--s4);">Manage your programmatic
+                            external job syndication.</p>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--s4);">
+                            <div
+                                style="padding: var(--s4); border: 1px solid var(--border-light); border-radius: var(--r-lg); background: var(--bg);">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--s3);">
+                                    <span style="font-weight: 700; color: #0A66C2;">LinkedIn Jobs</span>
+                                    <span
+                                        style="font-size: 0.75rem; background: rgba(52,199,89,0.1); color: var(--success); font-weight: bold; padding: 2px 8px; border-radius: var(--r-full); white-space: nowrap;">Sync Active</span>
+                                </div>
+                                <p
+                                    style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--s3);">
+                                    Sourcing 100% of standard roles, with programmatic auto-refresh.</p>
+                                <span style="font-size: 0.8125rem; color: var(--text-tertiary);">14,210 Views • 412
+                                    Clicks</span>
+                            </div>
+                            <div
+                                style="padding: var(--s4); border: 1px solid var(--border-light); border-radius: var(--r-lg); background: var(--bg);">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--s3);">
+                                    <span style="font-weight: 700; color: #167A38;">Indeed Sponsored</span>
+                                    <span
+                                        style="font-size: 0.75rem; background: rgba(52,199,89,0.1); color: var(--success); font-weight: bold; padding: 2px 8px; border-radius: var(--r-full); white-space: nowrap;">Sync Active</span>
+                                </div>
+                                <p
+                                    style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--s3);">
+                                    Direct API feed integrations for tech, design, and product listings.</p>
+                                <span style="font-size: 0.8125rem; color: var(--text-tertiary);">9,800 Views • 211
+                                    Clicks</span>
+                            </div>
+                            <div
+                                style="padding: var(--s4); border: 1px solid var(--border-light); border-radius: var(--r-lg); background: var(--bg);">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--s3);">
+                                    <span style="font-weight: 700; color: #F48024;">StackOverflow Jobs</span>
+                                    <span
+                                        style="font-size: 0.75rem; background: var(--bg-alt); color: var(--text-secondary); font-weight: bold; padding: 2px 8px; border-radius: var(--r-full);">Paused</span>
+                                </div>
+                                <p
+                                    style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--s3);">
+                                    Syndicate niche engineering jobs to the technical developer network.</p>
+                                <span style="font-size: 0.8125rem; color: var(--text-tertiary);">1,230 Views • 87
+                                    Clicks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APPLICANTS TAB -->
+            <div id="applicants" class="tab-pane">
+                <div style="display: flex; flex-direction: column; gap: var(--s5);">
+                    <div class="dashboard-header-sticky">
+                        <div>
+                            <h2>Applicant Tracking System <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></h2>
+                            <p style="margin-bottom: 0;">Review, filter, and manage candidates across all your job postings.</p>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--s3);">
+                            <div style="text-align: right;" class="mobile-hide">
+                                <p style="margin: 0; font-weight: 600; font-size: 0.9375rem;">Sarah Smith</p>
+                                <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary);">HR Manager</p>
+                            </div>
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--info)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; box-shadow: var(--shadow-sm);">SS</div>
+                        </div>
+                    </div>
+
+                    <!-- Applicant Funnel Stats -->
+                    <div class="funnel-stats-grid"
+                        style="display: grid; gap: var(--s3); padding-bottom: var(--s2);">
+                        <div class="card"
+                            style="padding: var(--s3); text-align: center; background: var(--bg-alt); min-width: 120px;">
+                            <span style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">342</span>
+                            <p
+                                style="margin: 4px 0 0 0; font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary);">
+                                Applied</p>
+                        </div>
+                        <div class="card"
+                            style="padding: var(--s3); text-align: center; background: var(--bg-alt); min-width: 120px;">
+                            <span style="font-size: 1.5rem; font-weight: bold; color: var(--info);">118</span>
+                            <p
+                                style="margin: 4px 0 0 0; font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary);">
+                                Screened</p>
+                        </div>
+                        <div class="card"
+                            style="padding: var(--s3); text-align: center; background: var(--bg-alt); min-width: 120px;">
+                            <span style="font-size: 1.5rem; font-weight: bold; color: var(--success);">24</span>
+                            <p
+                                style="margin: 4px 0 0 0; font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary);">
+                                Interviewing</p>
+                        </div>
+                        <div class="card"
+                            style="padding: var(--s3); text-align: center; background: var(--bg-alt); min-width: 120px;">
+                            <span style="font-size: 1.5rem; font-weight: bold; color: var(--warning);">8</span>
+                            <p
+                                style="margin: 4px 0 0 0; font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary);">
+                                Offered</p>
+                        </div>
+                        <div class="card"
+                            style="padding: var(--s3); text-align: center; background: var(--bg-alt); min-width: 120px;">
+                            <span style="font-size: 1.5rem; font-weight: bold; color: var(--accent);">5</span>
+                            <p
+                                style="margin: 4px 0 0 0; font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary);">
+                                Hired</p>
+                        </div>
+                    </div>
+
+                    <!-- Applicant Search & filter -->
+                    <div class="card"
+                        style="display: flex; gap: var(--s3); flex-wrap: wrap; justify-content: space-between; align-items: center;">
+                        <input type="text" class="form-control"
+                            placeholder="Search applicants by name, skill, or experience..."
+                            style="margin: 0; flex: 1; min-width: 250px;">
+                        <div style="display: flex; gap: var(--s2); flex-wrap: wrap;">
+                            <select class="form-control" style="margin: 0; width: 150px;">
+                                <option value="">Match Score</option>
+                                <option value="90">> 90% Match</option>
+                                <option value="80">> 80% Match</option>
+                                <option value="70">> 70% Match</option>
+                            </select>
+                            <select class="form-control" style="margin: 0; width: 160px;">
+                                <option value="">Filter by Stage</option>
+                                <option value="new">New</option>
+                                <option value="review">Under Review</option>
+                                <option value="interview">Interview Scheduled</option>
+                                <option value="offered">Offer Extended</option>
+                                <option value="rejected">Rejected</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Applicant Lists (10 applicants detailed cards) -->
+                    <div class="candidate-list" style="display: flex; flex-direction: column; gap: var(--s4);">
+                        <!-- Candidate 1 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    JD</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">John Doe</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--success); background: rgba(52,199,89,0.1); padding: 2px 8px; border-radius: var(--r-sm);">94%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">
+                                        Senior Frontend Engineer • 8 Years Exp • San Francisco, CA (Hybrid)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600; text-align: center;">Technical
+                                    Interview</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View Resume</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">React.js</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">TypeScript</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Tailwind
+                                    CSS</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Redux
+                                    Toolkit</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Next.js</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Exceptional communication skills during the initial
+                                recruiter phone screening. Possesses strong UI/UX design sensibilities and has shipped
+                                high-traffic user portals at previous jobs.</p>
+                        </div>
+
+                        <!-- Candidate 2 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #C9A96E, #D4B87A); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    SK</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">Sarah Kim</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--success); background: rgba(52,199,89,0.1); padding: 2px 8px; border-radius: var(--r-sm);">91%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">
+                                        Product Manager • 6 Years Exp • Seattle, WA (Remote)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: rgba(0,122,255,0.1); color: var(--primary); font-size: 0.8125rem; font-weight: 600; text-align: center;">Under
+                                    Review</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View Resume</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Agile</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Roadmapping</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Jira</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">SQL</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Amplitude
+                                    Analytics</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Highly analytical product candidate from a top-tier
+                                SaaS competitor. Strong product execution framework and customer-first alignment.</p>
+                        </div>
+
+                        <!-- Candidate 3 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #2D8B6A, #3D9B7A); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    AC</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">Alex Chen</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--success); background: rgba(52,199,89,0.1); padding: 2px 8px; border-radius: var(--r-sm);">92%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">
+                                        Data Scientist • 5 Years Exp • New York, NY (Hybrid)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: rgba(255,149,0,0.1); color: var(--warning); font-size: 0.8125rem; font-weight: 600; text-align: center;">Offer
+                                    Extended</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View Resume</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Python</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">PyTorch</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Pandas</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Machine
+                                    Learning</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">AWS
+                                    SageMaker</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Written offer extended on Jun 15th. Currently in final
+                                package negotiations. Expected sign-off by end of the week.</p>
+                        </div>
+
+                        <!-- Candidate 4 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #AF52DE, #D5A4EB); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    EM</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">Elena Martinez</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--success); background: rgba(52,199,89,0.1); padding: 2px 8px; border-radius: var(--r-sm);">88%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">UX
+                                        Designer • 4 Years Exp • Los Angeles, CA (Remote)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: var(--bg-alt); color: var(--text-secondary); font-size: 0.8125rem; font-weight: 600; text-align: center;">New
+                                    Application</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View Resume</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Figma</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">User
+                                    Research</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Prototyping</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Wireframes</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Portfolio links verified. Strong visual style and
+                                comprehensive case studies demonstrating end-to-end design thinking.</p>
+                        </div>
+
+                        <!-- Candidate 5 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #FF9500, #FFCC00); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    EW</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">Emily Watson</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--success); background: rgba(52,199,89,0.1); padding: 2px 8px; border-radius: var(--r-sm);">85%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">QA
+                                        Automation Engineer • 4 Years Exp • Chicago, IL (Hybrid)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: rgba(0,122,255,0.1); color: var(--primary); font-size: 0.8125rem; font-weight: 600; text-align: center;">Phone
+                                    Screen</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View Resume</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Selenium</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Playwright</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">CI/CD
+                                    Pipelines</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Python</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Solid test automation architecture background. Strong
+                                Python scripting capabilities. Schedule technical screen.</p>
+                        </div>
+
+                        <!-- Candidate 6 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #00C7FC, #89E4FF); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    MA</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">Marcus Aurelius</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--success); background: rgba(52,199,89,0.1); padding: 2px 8px; border-radius: var(--r-sm);">96%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">
+                                        Site Reliability Engineer • 7 Years Exp • Austin, TX (Remote)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600; text-align: center;">Technical
+                                    Panel</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View Resume</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Kubernetes</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Terraform</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">GoLang</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">AWS
+                                    / GCP</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Clean coding test performance. Answered system
+                                architecture scaling questions flawlessly. Highly recommended for the infrastructure
+                                lead team.</p>
+                        </div>
+
+                        <!-- Candidate 7 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #FF2D55, #FF5B7F); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    JB</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">Jessica Brown</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); background: var(--border-light); padding: 2px 8px; border-radius: var(--r-sm);">72%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">HR
+                                        Specialist • 3 Years Exp • Boston, MA (On-Site)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: var(--bg-alt); color: var(--text-secondary); font-size: 0.8125rem; font-weight: 600; text-align: center;">New
+                                    Application</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View Resume</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Workday</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Employee
+                                    Relations</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Benefits
+                                    Management</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Initial screening review needed by the operations team
+                                lead.</p>
+                        </div>
+
+                        <!-- Candidate 8 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #5856D6, #C694F9); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    DM</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">David Miller</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--success); background: rgba(52,199,89,0.1); padding: 2px 8px; border-radius: var(--r-sm);">89%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">
+                                        Mobile App Developer • 6 Years Exp • Denver, CO (Remote)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: rgba(0,122,255,0.1); color: var(--primary); font-size: 0.8125rem; font-weight: 600; text-align: center;">Hiring
+                                    Manager Screen</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View Resume</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">SwiftUI
+                                    / Swift</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Kotlin
+                                    / Android SDK</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Flutter</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Core
+                                    Data</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Shipped multiple rated apps to App Store & Google Play
+                                Store. Deep mobile lifecycle understandings.</p>
+                        </div>
+
+                        <!-- Candidate 9 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #007AFF, #05D9FF); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    SG</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">Sophia Garcia</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--success); background: rgba(52,199,89,0.1); padding: 2px 8px; border-radius: var(--r-sm);">93%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">
+                                        Security Engineer • 5 Years Exp • San Diego, CA (Hybrid)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: rgba(0,122,255,0.1); color: var(--primary); font-size: 0.8125rem; font-weight: 600; text-align: center;">Technical
+                                    Review</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View Resume</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">SOC2
+                                    Compliance</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Penetration
+                                    Testing</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">OAuth
+                                    / IAM</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Cloud
+                                    Security</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Certified Information Systems Security Professional
+                                (CISSP). Great experience implementing compliance frameworks.</p>
+                        </div>
+
+                        <!-- Candidate 10 -->
+                        <div class="card"
+                            style="display: flex; flex-direction: column; gap: var(--s3); border: 1px solid var(--border-light);">
+                            <div style="display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap;">
+                                <div
+                                    style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #E0E0E0, #9E9E9E); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;">
+                                    RJ</div>
+                                <div style="flex: 1; min-width: 240px;">
+                                    <div style="display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap;">
+                                        <h4 style="margin: 0; font-size: 1.0625rem;">Robert Johnson</h4>
+                                        <span
+                                            style="font-size: 0.75rem; font-weight: 600; color: var(--error); background: rgba(255,59,48,0.1); padding: 2px 8px; border-radius: var(--r-sm);">48%
+                                            AI Match</span>
+                                    </div>
+                                    <p style="margin: 4px 0 0 0; font-size: 0.875rem; color: var(--text-secondary);">
+                                        Backend Developer • 2 Years Exp • Miami, FL (On-Site)</p>
+                                </div>
+                                <span
+                                    style="padding: 4px 12px; border-radius: var(--r-full); background: rgba(255,59,48,0.1); color: var(--error); font-size: 0.8125rem; font-weight: 600; text-align: center;">Rejected</span>
+                                <div style="display: flex; gap: var(--s2);">
+                                    <button class="btn btn-primary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">View
+                                        Profile</button>
+                                    <button class="btn btn-secondary"
+                                        style="padding: var(--s2) var(--s3); font-size: 0.8125rem;">Message</button>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: var(--s1); border-top: 1px solid var(--border-light);">
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Java</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">Spring
+                                    Boot</span>
+                                <span
+                                    style="font-size: 0.75rem; padding: 2px 8px; background: var(--bg-alt); border-radius: var(--r-sm); color: var(--text-secondary);">SQL</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary); line-height: 1.4;">
+                                <strong>Recruiter Notes:</strong> Candidate does not meet minimum experience guidelines
+                                or framework competencies required for our architecture.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POST JOB TAB -->
+            <div id="post-job" class="tab-pane">
+                <div style="display: flex; flex-direction: column; gap: var(--s5);">
+                    <div class="dashboard-header-sticky">
+                        <div>
+                            <h2>Create a New Job Posting <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></h2>
+                            <p style="margin-bottom: 0;">Fill out the details below to attract top talent to your company.</p>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--s3);">
+                            <div style="text-align: right;" class="mobile-hide">
+                                <p style="margin: 0; font-weight: 600; font-size: 0.9375rem;">Sarah Smith</p>
+                                <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary);">HR Manager</p>
+                            </div>
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--info)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; box-shadow: var(--shadow-sm);">SS</div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid-layout">
+                        <!-- LEFT COLUMN: Form -->
+                        <div class="card" style="padding: var(--s5);">
+                            <h3 style="margin-bottom: var(--s4);">Job Details & Specifications</h3>
+                            <form class="needs-validation" novalidate
+                                style="display: flex; flex-direction: column; gap: var(--s4);">
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Job Title</label>
+                                    <input type="text" class="form-control" required
+                                        placeholder="e.g., Lead Site Reliability Engineer" style="margin-top: 6px;">
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--s4);">
+                                    <div class="form-group">
+                                        <label class="form-label" style="font-weight: 600;">Department</label>
+                                        <select class="form-control" required style="margin-top: 6px;">
+                                            <option value="" disabled selected>Select department</option>
+                                            <option>Engineering</option>
+                                            <option>Product Management</option>
+                                            <option>UX & UI Design</option>
+                                            <option>People & Culture</option>
+                                            <option>Operations</option>
+                                            <option>Sales & Marketing</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" style="font-weight: 600;">Employment Type</label>
+                                        <select class="form-control" required style="margin-top: 6px;">
+                                            <option value="" disabled selected>Select type</option>
+                                            <option>Full-Time</option>
+                                            <option>Part-Time</option>
+                                            <option>Contract Basis</option>
+                                            <option>Internship</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--s4);">
+                                    <div class="form-group">
+                                        <label class="form-label" style="font-weight: 600;">Work Policy</label>
+                                        <select class="form-control" required style="margin-top: 6px;">
+                                            <option>Remote (Work from Anywhere)</option>
+                                            <option selected>Hybrid (3 days in office)</option>
+                                            <option>On-Site (San Francisco HQ)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" style="font-weight: 600;">Experience Target</label>
+                                        <select class="form-control" required style="margin-top: 6px;">
+                                            <option>Entry-level (0 - 2 Years)</option>
+                                            <option>Mid-level (2 - 5 Years)</option>
+                                            <option selected>Senior level (5 - 8 Years)</option>
+                                            <option>Lead / Principal (8+ Years)</option>
+                                            <option>Executive Manager</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--s4);">
+                                    <div class="form-group">
+                                        <label class="form-label" style="font-weight: 600;">Headquarters
+                                            Location</label>
+                                        <input type="text" class="form-control" placeholder="e.g., San Francisco, CA"
+                                            style="margin-top: 6px;">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" style="font-weight: 600;">Salary Range Target</label>
+                                        <input type="text" class="form-control" placeholder="e.g., $150,000 - $185,000"
+                                            style="margin-top: 6px;">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Job Mission &
+                                        Description</label>
+                                    <textarea class="form-control" rows="6" required
+                                        placeholder="Outline the main responsibilities, team structures, and daily work impact..."
+                                        style="margin-top: 6px;"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Technical Competencies &
+                                        Requirements</label>
+                                    <textarea class="form-control" rows="4"
+                                        placeholder="List framework capabilities, languages, methodologies, and certifications required..."
+                                        style="margin-top: 6px;"></textarea>
+                                </div>
+                                <div class="form-group"
+                                    style="border-top: 1px solid var(--border-light); padding-top: var(--s4);">
+                                    <h4 style="margin-bottom: var(--s2); font-size: 0.9375rem;">Custom Candidate
+                                        Screening Questions</h4>
+                                    <p
+                                        style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--s3);">
+                                        Configure questions candidates must answer during the application process.</p>
+                                    <div style="display: flex; flex-direction: column; gap: var(--s2);">
+                                        <input type="text" class="form-control"
+                                            placeholder="Question 1: Explain your experience building scalable distributed caching systems."
+                                            style="margin: 0;">
+                                        <input type="text" class="form-control"
+                                            placeholder="Question 2: Detail a project where you solved cloud architecture bottlenecks."
+                                            style="margin: 0;">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Pre-Screen Assessment Test
+                                        Selection</label>
+                                    <select class="form-control" style="margin-top: 6px;">
+                                        <option value="">No Assessment Selected</option>
+                                        <option>Technical: Advanced Javascript & React Architecture</option>
+                                        <option>Technical: Backend Systems Design & Database Indexing</option>
+                                        <option>Product: Roadmap Prioritization Case Study</option>
+                                        <option>Design: User Interface & Usability Evaluation</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg"
+                                    style="width: 100%; margin-top: var(--s3);">Publish Job Requisition →</button>
+                            </form>
+                        </div>
+
+                        <!-- RIGHT COLUMN: Tools & Templates -->
+                        <div style="display: flex; flex-direction: column; gap: var(--s5);">
+                            <!-- Template Selector -->
+                            <div class="card">
+                                <h4 style="margin-bottom: var(--s3);">Job Role Templates</h4>
+                                <p
+                                    style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--s3);">
+                                    Click a template card to auto-prefill the job description, mission, and technical
+                                    requirements details.</p>
+                                <div style="display: flex; flex-direction: column; gap: var(--s2);">
+                                    <div style="padding: 10px; border: 1px solid var(--border-light); border-radius: var(--r-md); background: var(--bg-alt); cursor: pointer; transition: all 0.2s;"
+                                        onmouseover="this.style.borderColor='var(--primary)'"
+                                        onmouseout="this.style.borderColor='var(--border-light)'">
+                                        <span style="font-weight: bold; font-size: 0.8125rem; display: block;">Senior
+                                            Software Engineer (Frontend)</span>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">Department:
+                                            Engineering • Next.js / TS</span>
+                                    </div>
+                                    <div style="padding: 10px; border: 1px solid var(--border-light); border-radius: var(--r-md); background: var(--bg-alt); cursor: pointer; transition: all 0.2s;"
+                                        onmouseover="this.style.borderColor='var(--primary)'"
+                                        onmouseout="this.style.borderColor='var(--border-light)'">
+                                        <span style="font-weight: bold; font-size: 0.8125rem; display: block;">Senior
+                                            Backend Systems Developer</span>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">Department:
+                                            Engineering • Go / Kubernetes</span>
+                                    </div>
+                                    <div style="padding: 10px; border: 1px solid var(--border-light); border-radius: var(--r-md); background: var(--bg-alt); cursor: pointer; transition: all 0.2s;"
+                                        onmouseover="this.style.borderColor='var(--primary)'"
+                                        onmouseout="this.style.borderColor='var(--border-light)'">
+                                        <span style="font-weight: bold; font-size: 0.8125rem; display: block;">Lead UX /
+                                            Product Designer</span>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">Department:
+                                            Design • Figma / Design Systems</span>
+                                    </div>
+                                    <div style="padding: 10px; border: 1px solid var(--border-light); border-radius: var(--r-md); background: var(--bg-alt); cursor: pointer; transition: all 0.2s;"
+                                        onmouseover="this.style.borderColor='var(--primary)'"
+                                        onmouseout="this.style.borderColor='var(--border-light)'">
+                                        <span style="font-weight: bold; font-size: 0.8125rem; display: block;">Senior
+                                            Enterprise Product Manager</span>
+                                        <span style="font-size: 0.75rem; color: var(--text-tertiary);">Department:
+                                            Product • Agile / Analytics</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quality Checklist -->
+                            <div class="card" style="padding: var(--s4);">
+                                <h4 style="margin-bottom: var(--s3);">Job Post Quality Checker</h4>
+                                <div style="display: flex; flex-direction: column; gap: var(--s3);">
+                                    <div style="display: flex; gap: var(--s2); align-items: flex-start;">
+                                        <span style="color: var(--success); font-weight: bold;">✓</span>
+                                        <div>
+                                            <span
+                                                style="font-size: 0.8125rem; font-weight: 600; display: block;">Descriptive
+                                                Job Title</span>
+                                            <span style="font-size: 0.75rem; color: var(--text-tertiary);">Keep it clear
+                                                and searchable.</span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: var(--s2); align-items: flex-start;">
+                                        <span style="color: var(--success); font-weight: bold;">✓</span>
+                                        <div>
+                                            <span style="font-size: 0.8125rem; font-weight: 600; display: block;">Salary
+                                                range provided</span>
+                                            <span style="font-size: 0.75rem; color: var(--text-tertiary);">Raises
+                                                application counts by 30%.</span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: var(--s2); align-items: flex-start;">
+                                        <span style="color: var(--warning); font-weight: bold;">⚠</span>
+                                        <div>
+                                            <span style="font-size: 0.8125rem; font-weight: 600; display: block;">Work
+                                                Policy detail</span>
+                                            <span style="font-size: 0.75rem; color: var(--text-tertiary);">Specifying
+                                                hybrid office expectations.</span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: var(--s2); align-items: flex-start;">
+                                        <span style="color: var(--success); font-weight: bold;">✓</span>
+                                        <div>
+                                            <span
+                                                style="font-size: 0.8125rem; font-weight: 600; display: block;">Required
+                                                experience level</span>
+                                            <span style="font-size: 0.75rem; color: var(--text-tertiary);">Helps AI
+                                                filter candidate matching.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hiring Team Requisition -->
+                            <div class="card" style="padding: var(--s4);">
+                                <h4 style="margin-bottom: var(--s3);">Hiring Committee Approvers</h4>
+                                <div style="display: flex; flex-direction: column; gap: var(--s3);">
+                                    <div style="display: flex; align-items: center; gap: var(--s2);">
+                                        <div
+                                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: bold;">
+                                            MS</div>
+                                        <div>
+                                            <span
+                                                style="font-size: 0.8125rem; font-weight: 600; display: block;">Michael
+                                                Scott</span>
+                                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Hiring
+                                                Manager • Owner</span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: var(--s2);">
+                                        <div
+                                            style="width: 28px; height: 28px; border-radius: 50%; background: var(--secondary); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: bold;">
+                                            JH</div>
+                                        <div>
+                                            <span style="font-size: 0.8125rem; font-weight: 600; display: block;">Jim
+                                                Halpert</span>
+                                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Lead
+                                                Recruiter • Admin</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-secondary"
+                                        style="width: 100%; padding: var(--s2); font-size: 0.75rem; margin-top: var(--s2);">Add
+                                        Requisition Approver</button>
+                                </div>
+                            </div>
+
+                            <!-- Programmatic Distribution -->
+                            <div class="card" style="padding: var(--s4);">
+                                <h4 style="margin-bottom: var(--s3);">Programmatic Syndication</h4>
+                                <p
+                                    style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: var(--s3);">
+                                    Select external boards to syndicate this requisition immediately upon approval.</p>
+                                <div style="display: flex; flex-direction: column; gap: var(--s3);">
+                                    <label style="display: flex; align-items: center; gap: var(--s2); cursor: pointer;">
+                                        <input type="checkbox" checked
+                                            style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                        <span style="font-size: 0.8125rem; font-weight: 500;">LinkedIn Jobs
+                                            Network</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: var(--s2); cursor: pointer;">
+                                        <input type="checkbox" checked
+                                            style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                        <span style="font-size: 0.8125rem; font-weight: 500;">Indeed Sponsored
+                                            Feed</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: var(--s2); cursor: pointer;">
+                                        <input type="checkbox"
+                                            style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                        <span style="font-size: 0.8125rem; font-weight: 500;">Glassdoor Corporate
+                                            Feed</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: var(--s2); cursor: pointer;">
+                                        <input type="checkbox" checked
+                                            style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                        <span style="font-size: 0.8125rem; font-weight: 500;">RecruitPro Talent Pools
+                                            Sync</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPANY PROFILE TAB -->
+            <div id="company-profile" class="tab-pane">
+                <div style="display: flex; flex-direction: column; gap: var(--s5);">
+                    <div class="dashboard-header-sticky">
+                        <div>
+                            <h2>Company Profile Details <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></h2>
+                            <p style="margin-bottom: 0;">Manage your employer brand, culture, and public information.</p>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--s3);">
+                            <div style="text-align: right;" class="mobile-hide">
+                                <p style="margin: 0; font-weight: 600; font-size: 0.9375rem;">Sarah Smith</p>
+                                <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary);">HR Manager</p>
+                            </div>
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--info)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; box-shadow: var(--shadow-sm);">SS</div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="padding: var(--s5);">
+                        <h3 style="margin-bottom: var(--s4);">Corporate Info</h3>
+                        <form style="display: flex; flex-direction: column; gap: var(--s4);">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--s4);">
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Company Name</label>
+                                    <input type="text" class="form-control" value="TechCorp Inc."
+                                        style="margin-top: 6px;">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Industry / Sector</label>
+                                    <input type="text" class="form-control" value="Technology / Cloud SaaS"
+                                        style="margin-top: 6px;">
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--s4);">
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Company Size Band</label>
+                                    <select class="form-control" style="margin-top: 6px;">
+                                        <option>1–10 employees</option>
+                                        <option>11–50 employees</option>
+                                        <option selected>51–200 employees</option>
+                                        <option>201–500 employees</option>
+                                        <option>500+ employees</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Founded Year</label>
+                                    <input type="number" class="form-control" value="2018" style="margin-top: 6px;">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" style="font-weight: 600;">About Corporate Mission</label>
+                                <textarea class="form-control" rows="5"
+                                    style="margin-top: 6px;">TechCorp Inc. is a leading enterprise SaaS provider offering comprehensive pipeline automation solutions. Empowering global development team ecosystems through cloud-agnostic management stacks, containerized workflows, and deep machine-learning insights.</textarea>
+                            </div>
+                            <h4 style="margin-top: var(--s3); margin-bottom: 2px;">Digital Footprint & Connections</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--s4);">
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Official Site</label>
+                                    <input type="url" class="form-control" value="https://techcorp.example.com"
+                                        style="margin-top: 6px;">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">LinkedIn Page</label>
+                                    <input type="url" class="form-control" value="https://linkedin.com/company/techcorp"
+                                        style="margin-top: 6px;">
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--s4);">
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Twitter / X Feed</label>
+                                    <input type="url" class="form-control" value="https://twitter.com/techcorp"
+                                        style="margin-top: 6px;">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" style="font-weight: 600;">Branding Assets Logo
+                                        (URL)</label>
+                                    <input type="url" class="form-control"
+                                        value="https://techcorp.example.com/assets/logo.png" style="margin-top: 6px;">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" style="align-self: flex-start; margin-top: var(--s2);">Save Corporate Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- Corporate Perks and Benefits -->
+                    <div class="card" style="padding: var(--s5);">
+                        <h3 style="margin-bottom: var(--s3);">Employee Benefits & Requisition Perks</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--s4); font-size: 0.875rem;">Check
+                            benefit categories to append standard items directly onto newly published listings.</p>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--s4);">
+                            <label
+                                style="display: flex; align-items: flex-start; gap: var(--s3); cursor: pointer; padding: var(--s3); border: 1px solid var(--border-light); border-radius: var(--r-lg); background: var(--bg-alt);">
+                                <input type="checkbox" checked
+                                    style="width: 18px; height: 18px; accent-color: var(--primary); margin-top: 2px;">
+                                <div>
+                                    <span style="font-weight: 700; display: block; font-size: 0.875rem;">Premium Health
+                                        & Dental</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-secondary);">Full medical plan
+                                        covering 100% premiums for dependants.</span>
+                                </div>
+                            </label>
+                            <label
+                                style="display: flex; align-items: flex-start; gap: var(--s3); cursor: pointer; padding: var(--s3); border: 1px solid var(--border-light); border-radius: var(--r-lg); background: var(--bg-alt);">
+                                <input type="checkbox" checked
+                                    style="width: 18px; height: 18px; accent-color: var(--primary); margin-top: 2px;">
+                                <div>
+                                    <span style="font-weight: 700; display: block; font-size: 0.875rem;">401(k)
+                                        Retirement Match</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-secondary);">Direct dollar
+                                        matching contributions up to 5% salary.</span>
+                                </div>
+                            </label>
+                            <label
+                                style="display: flex; align-items: flex-start; gap: var(--s3); cursor: pointer; padding: var(--s3); border: 1px solid var(--border-light); border-radius: var(--r-lg); background: var(--bg-alt);">
+                                <input type="checkbox" checked
+                                    style="width: 18px; height: 18px; accent-color: var(--primary); margin-top: 2px;">
+                                <div>
+                                    <span style="font-weight: 700; display: block; font-size: 0.875rem;">Flexible Hybrid
+                                        Policy</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-secondary);">Core hours workflow
+                                        with Tuesday to Thursday office schedules.</span>
+                                </div>
+                            </label>
+                            <label
+                                style="display: flex; align-items: flex-start; gap: var(--s3); cursor: pointer; padding: var(--s3); border: 1px solid var(--border-light); border-radius: var(--r-lg); background: var(--bg-alt);">
+                                <input type="checkbox" checked
+                                    style="width: 18px; height: 18px; accent-color: var(--primary); margin-top: 2px;">
+                                <div>
+                                    <span style="font-weight: 700; display: block; font-size: 0.875rem;">Wellness &
+                                        Fitness Stipend</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-secondary);">$150 monthly
+                                        reimbursement for gym or mental health programs.</span>
+                                </div>
+                            </label>
+                            <label
+                                style="display: flex; align-items: flex-start; gap: var(--s3); cursor: pointer; padding: var(--s3); border: 1px solid var(--border-light); border-radius: var(--r-lg); background: var(--bg-alt);">
+                                <input type="checkbox" checked
+                                    style="width: 18px; height: 18px; accent-color: var(--primary); margin-top: 2px;">
+                                <div>
+                                    <span style="font-weight: 700; display: block; font-size: 0.875rem;">Annual Learning
+                                        Credits</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-secondary);">$2,000 allowance for
+                                        courses, bootcamps, or tech conferences.</span>
+                                </div>
+                            </label>
+                            <label
+                                style="display: flex; align-items: flex-start; gap: var(--s3); cursor: pointer; padding: var(--s3); border: 1px solid var(--border-light); border-radius: var(--r-lg); background: var(--bg-alt);">
+                                <input type="checkbox"
+                                    style="width: 18px; height: 18px; accent-color: var(--primary); margin-top: 2px;">
+                                <div>
+                                    <span style="font-weight: 700; display: block; font-size: 0.875rem;">Unlimited
+                                        Vacation Days</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-secondary);">Open PTO policy with
+                                        a mandatory minimum of 20 days off.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETTINGS TAB -->
+            <div id="settings" class="tab-pane">
+                <div style="display: flex; flex-direction: column; gap: var(--s5);">
+                    <div class="dashboard-header-sticky">
+                        <div>
+                            <h2>Employer Settings <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></h2>
+                            <p style="margin-bottom: 0;">Manage your account, billing, and team members.</p>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--s3);">
+                            <div style="text-align: right;" class="mobile-hide">
+                                <p style="margin: 0; font-weight: 600; font-size: 0.9375rem;">Sarah Smith</p>
+                                <p style="margin: 0; font-size: 0.8125rem; color: var(--text-tertiary);">HR Manager</p>
+                            </div>
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--info)); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; box-shadow: var(--shadow-sm);">SS</div>
+                        </div>
+                    </div>
+
+                    <!-- Top row: Notification Preferences + Security Form -->
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: var(--s5);">
+                        <div class="card" style="padding: var(--s5); display: flex; flex-direction: column; justify-content: space-between;">
+                            <h3 style="margin-bottom: var(--s4);">Notification Preferences</h3>
+                            <div style="display: flex; flex-direction: column; gap: var(--s3); margin-bottom: var(--s4);">
+                                <label style="display: flex; align-items: center; gap: var(--s2); cursor: pointer;">
+                                    <input type="checkbox" checked
+                                        style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                    <span style="font-size: 0.875rem;">Email me when a new candidate applies</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: var(--s2); cursor: pointer;">
+                                    <input type="checkbox" checked
+                                        style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                    <span style="font-size: 0.875rem;">Email me daily digest of applications</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: var(--s2); cursor: pointer;">
+                                    <input type="checkbox"
+                                        style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                    <span style="font-size: 0.875rem;">Notify me when a candidate sends a message</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: var(--s2); cursor: pointer;">
+                                    <input type="checkbox" checked
+                                        style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                    <span style="font-size: 0.875rem;">Remind me of upcoming interviews</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: var(--s2); cursor: pointer;">
+                                    <input type="checkbox"
+                                        style="width: 16px; height: 16px; accent-color: var(--primary);">
+                                    <span style="font-size: 0.875rem;">Alert me when billing renews or fails</span>
+                                </label>
+                            </div>
+                            <button class="btn btn-primary" style="width: 100%;">Save Preferences</button>
+                        </div>
+
+                        <div class="card" style="padding: var(--s5);">
+                            <h3 style="margin-bottom: var(--s4);">Security & Credentials</h3>
+                            <div class="form-group" style="margin-bottom: var(--s3);">
+                                <label class="form-label">Current Password</label>
+                                <input type="password" class="form-control" style="margin-top: 4px;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: var(--s3);">
+                                <label class="form-label">New Password</label>
+                                <input type="password" class="form-control" style="margin-top: 4px;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: var(--s3);">
+                                <label class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" style="margin-top: 4px;">
+                            </div>
+                            <div style="display: flex; gap: var(--s3); align-items: center; margin-top: var(--s4);">
+                                <button class="btn btn-primary">Update Password</button>
+                                <button class="btn btn-secondary">Enable 2FA</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Management Card -->
+                    <div class="card" style="padding: var(--s5);">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--s4); flex-wrap: wrap; gap: var(--s2);">
+                            <div>
+                                <h3 style="margin: 0;">Hiring Team & Collaborators</h3>
+                                <p style="margin: 2px 0 0 0; font-size: 0.8125rem; color: var(--text-secondary);">Manage
+                                    recruiters, interviewers, and admin panel privileges.</p>
+                            </div>
+                            <button class="btn btn-secondary">Invite Team Member</button>
+                        </div>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 700px;">
+                                <thead>
+                                    <tr style="border-bottom: 2px solid var(--border-light);">
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Name</th>
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Email Address</th>
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Access Level</th>
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Status</th>
+                                        <th
+                                            style="padding: var(--s3) var(--s2); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">
+                                            Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td
+                                            style="padding: var(--s3) var(--s2); display: flex; align-items: center; gap: 8px;">
+                                            <div
+                                                style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center !important; font-weight: bold; font-size: 0.8125rem; flex-shrink: 0;">
+                                                MS</div>
+                                            <span style="font-weight: 600;">Michael Scott</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">
+                                            m.scott@techcorp.example.com</td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 500;">Owner / Admin</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);"><button class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;"
+                                                disabled>Manage</button></td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td
+                                            style="padding: var(--s3) var(--s2); display: flex; align-items: center; gap: 8px;">
+                                            <div
+                                                style="width: 32px; height: 32px; border-radius: 50%; background: var(--secondary); color: white; display: flex; align-items: center; justify-content: center !important; font-weight: bold; font-size: 0.8125rem; flex-shrink: 0;">
+                                                JH</div>
+                                            <span style="font-weight: 600;">Jim Halpert</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">
+                                            j.halpert@techcorp.example.com</td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 500;">Senior Recruiter
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);"><button class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Manage</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td
+                                            style="padding: var(--s3) var(--s2); display: flex; align-items: center; gap: 8px;">
+                                            <div
+                                                style="width: 32px; height: 32px; border-radius: 50%; background: #AF52DE; color: white; display: flex; align-items: center; justify-content: center !important; font-weight: bold; font-size: 0.8125rem; flex-shrink: 0;">
+                                                PB</div>
+                                            <span style="font-weight: 600;">Pam Beesly</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">
+                                            p.beesly@techcorp.example.com</td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 500;">Recruitment
+                                            Coordinator</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);"><button class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Manage</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td
+                                            style="padding: var(--s3) var(--s2); display: flex; align-items: center; gap: 8px;">
+                                            <div
+                                                style="width: 32px; height: 32px; border-radius: 50%; background: #FF9500; color: white; display: flex; align-items: center; justify-content: center !important; font-weight: bold; font-size: 0.8125rem; flex-shrink: 0;">
+                                                DS</div>
+                                            <span style="font-weight: 600;">Dwight Schrute</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">
+                                            d.schrute@techcorp.example.com</td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 500;">Interviewer /
+                                            Engineer</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.8125rem; font-weight: 600;">Active</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);"><button class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Manage</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td
+                                            style="padding: var(--s3) var(--s2); display: flex; align-items: center; gap: 8px;">
+                                            <div
+                                                style="width: 32px; height: 32px; border-radius: 50%; background: #FF3B30; color: white; display: flex; align-items: center; justify-content: center !important; font-weight: bold; font-size: 0.8125rem; flex-shrink: 0; flex-shrink: 0;">
+                                                AH</div>
+                                            <span style="font-weight: 600;">Andy Bernard</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">
+                                            a.bernard@techcorp.example.com</td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 500;">Interviewer /
+                                            Recruiter</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 10px; border-radius: var(--r-full); background: var(--bg-alt); color: var(--text-secondary); font-size: 0.8125rem; font-weight: 600;">Pending
+                                                Invite</span></td>
+                                        <td style="padding: var(--s3) var(--s2);"><button class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Resend</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Billing history and Subscription -->
+                    <div class="card" style="padding: var(--s5);">
+                        <h3 style="margin-bottom: var(--s4);">Subscription & Billing Archive</h3>
+                        <div
+                            style="padding: var(--s4); background: var(--bg-alt); border-radius: var(--r-lg); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--s3); border: 1px solid var(--border-light); margin-bottom: var(--s4);">
+                            <div>
+                                <h4 style="margin: 0 0 2px 0; color: var(--primary);">Professional Employer Requisition
+                                    Plan</h4>
+                                <p style="margin: 0; font-size: 0.875rem;">$799/month billed monthly • Next renewal: Jul
+                                    1, 2026</p>
+                            </div>
+                            <div style="display: flex; gap: var(--s2); flex-wrap: wrap;">
+                                <button class="btn btn-secondary">Upgrade Plan</button>
+                                <button class="btn btn-primary">Manage Card Detail</button>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-bottom: var(--s3);">Historical Invoices</h4>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 600px;">
+                                <thead>
+                                    <tr style="border-bottom: 2px solid var(--border-light);">
+                                        <th
+                                            style="padding: var(--s2); font-size: 0.8125rem; text-transform: uppercase; color: var(--text-tertiary);">
+                                            Period</th>
+                                        <th
+                                            style="padding: var(--s2); font-size: 0.8125rem; text-transform: uppercase; color: var(--text-tertiary);">
+                                            Invoice ID</th>
+                                        <th
+                                            style="padding: var(--s2); font-size: 0.8125rem; text-transform: uppercase; color: var(--text-tertiary);">
+                                            Amount Billed</th>
+                                        <th
+                                            style="padding: var(--s2); font-size: 0.8125rem; text-transform: uppercase; color: var(--text-tertiary);">
+                                            Card Charged</th>
+                                        <th
+                                            style="padding: var(--s2); font-size: 0.8125rem; text-transform: uppercase; color: var(--text-tertiary);">
+                                            Payment Status</th>
+                                        <th
+                                            style="padding: var(--s2); font-size: 0.8125rem; text-transform: uppercase; color: var(--text-tertiary);">
+                                            Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Jun 1, 2026 - Jun
+                                            30, 2026</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">
+                                            INV-2026-006</td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">$799.00</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Visa
+                                            Ending 4242</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 8px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.75rem; font-weight: 600;">Paid</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);"><button class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Download
+                                                PDF</button></td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">May 1, 2026 - May
+                                            31, 2026</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">
+                                            INV-2026-005</td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">$799.00</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Visa
+                                            Ending 4242</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 8px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.75rem; font-weight: 600;">Paid</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);"><button class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Download
+                                                PDF</button></td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Apr 1, 2026 - Apr
+                                            30, 2026</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">
+                                            INV-2026-004</td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">$799.00</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Visa
+                                            Ending 4242</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 8px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.75rem; font-weight: 600;">Paid</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);"><button class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Download
+                                                PDF</button></td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">Mar 1, 2026 - Mar
+                                            31, 2026</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">
+                                            INV-2026-003</td>
+                                        <td style="padding: var(--s3) var(--s2); font-weight: 600;">$799.00</td>
+                                        <td style="padding: var(--s3) var(--s2); color: var(--text-secondary);">Visa
+                                            Ending 4242</td>
+                                        <td style="padding: var(--s3) var(--s2);"><span
+                                                style="display: inline-block; padding: 2px 8px; border-radius: var(--r-full); background: rgba(52,199,89,0.1); color: var(--success); font-size: 0.75rem; font-weight: 600;">Paid</span>
+                                        </td>
+                                        <td style="padding: var(--s3) var(--s2);"><button class="btn btn-secondary"
+                                                style="padding: var(--s1) var(--s3); font-size: 0.8125rem;">Download
+                                                PDF</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Integration API Webhook Card -->
+                    <div class="card" style="padding: var(--s5);">
+                        <h3 style="margin-bottom: var(--s3);">Recruitment Integrations & API Access</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--s4); font-size: 0.875rem;">Generate
+                            API credential tokens or sync webhooks to connect with external communication channels (e.g.
+                            Slack, Zoom, Google Calendar).</p>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--s4);">
+                            <div
+                                style="padding: var(--s4); background: var(--bg-alt); border: 1px solid var(--border-light); border-radius: var(--r-lg);">
+                                <span style="font-weight: 700; display: block; margin-bottom: var(--s2);">REST API
+                                    Token</span>
+                                <input type="text" class="form-control" value="••••••••••••••••••••••••••••••••"
+                                    readonly style="background: var(--bg); font-family: monospace;">
+                                <button class="btn btn-secondary"
+                                    style="margin-top: var(--s3); width: 100%; font-size: 0.8125rem;">Regenerate Access
+                                    Token</button>
+                            </div>
+                            <div
+                                style="padding: var(--s4); background: var(--bg-alt); border: 1px solid var(--border-light); border-radius: var(--r-lg);">
+                                <span style="font-weight: 700; display: block; margin-bottom: var(--s2);">Slack Webhook
+                                    Integration</span>
+                                <input type="url" class="form-control" value="https://hooks.slack.com/services/T00..."
+                                    readonly style="background: var(--bg); font-family: monospace;">
+                                <button class="btn btn-secondary"
+                                    style="margin-top: var(--s3); width: 100%; font-size: 0.8125rem;">Test Slack
+                                    Connection</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+
+    <button class="dashboard-hamburger" aria-label="Toggle Sidebar" style="display:none;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RecruitPro — Premium recruitment and staffing agency connecting world-class talent with industry-leading companies. Find your dream job or hire top talent today.">
+    <title>RecruitPro | Premium Recruitment & Staffing Agency</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="../assets/js/main.js" defer></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EmploymentAgency",
+      "name": "RecruitPro",
+      "url": "#",
+      "description": "Premium Recruitment & Staffing Agency"
+    }
+    </script>
+
+    <script>document.documentElement.dir = localStorage.getItem('dir') || 'ltr';</script>
+</head>
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Recruit<span>Pro</span>.</a>
+
+            <nav class="nav-menu">
+                <div class="nav-item-dropdown">
+                    <span class="nav-link active" style="cursor: pointer;">Home ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="index.html">Home 1 (Default)</a>
+                        <a href="index-2.html">Home 2 (New)</a>
+                    </div>
+                </div>
+                <a href="jobs.html" class="nav-link">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="nav-item-dropdown">
+                    <span class="nav-link" style="cursor: pointer;">Dashboards ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="candidate-dashboard.html">Candidate Portal</a>
+                        <a href="employer-dashboard.html">Employer Portal</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+                <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="login.html" class="btn btn-primary" style="padding: var(--s2) var(--s5);">Login</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ SECTION 1: HERO ============ -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content animate-on-scroll">
+                        <span class="section-subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg> #1 Recruitment Platform</span>
+                        <h1 class="hero-title">Find Your <span class="text-gradient">Dream Career</span> With Us</h1>
+                        <p class="hero-desc">We bridge the gap between world-class talent and industry-leading companies. Join over 50,000 professionals who found their perfect role through RecruitPro.</p>
+                        <div class="flex gap-4 flex-wrap">
+                            <a href="jobs.html" class="btn btn-primary btn-lg">Browse Jobs <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                            <a href="employer-dashboard.html" class="btn btn-secondary btn-lg">For Employers</a>
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <h3 data-count="50000" data-suffix="+">0</h3>
+                                <p>Candidates Placed</p>
+                            </div>
+                            <div class="hero-stat">
+                                <h3 data-count="2500" data-suffix="+">0</h3>
+                                <p>Partner Companies</p>
+                            </div>
+                            <div class="hero-stat">
+                                <h3 data-count="98" data-suffix="%">0</h3>
+                                <p>Client Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-image animate-on-scroll animate-delay-2">
+                        <img src="../assets/images/hero-banner.png" alt="Diverse team of professionals collaborating in a modern office" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 2: TRUSTED BY ============ -->
+        <section style="padding: var(--s7) 0; background: var(--surface); border-bottom: 1px solid var(--border-light);">
+            <div class="container">
+                <p class="animate-on-scroll" style="text-align: center; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-tertiary); margin-bottom: var(--s5);">Trusted by 2,500+ companies worldwide</p>
+                <div class="marquee-wrapper animate-on-scroll animate-delay-1">
+                    <div class="marquee-content">
+                        <span class="brand-logo">Google</span>
+                        <span class="brand-logo">Microsoft</span>
+                        <span class="brand-logo">Amazon</span>
+                        <span class="brand-logo">Meta</span>
+                        <span class="brand-logo">Stripe</span>
+                        <span class="brand-logo">Spotify</span>
+                        <span class="brand-logo" aria-hidden="true">Google</span>
+                        <span class="brand-logo" aria-hidden="true">Microsoft</span>
+                        <span class="brand-logo" aria-hidden="true">Amazon</span>
+                        <span class="brand-logo" aria-hidden="true">Meta</span>
+                        <span class="brand-logo" aria-hidden="true">Stripe</span>
+                        <span class="brand-logo" aria-hidden="true">Spotify</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 3: FEATURED JOBS ============ -->
+        <section class="section" style="background: var(--bg);">
+            <div class="container">
+                <div class="text-center animate-on-scroll" style="margin-bottom: var(--s7);">
+                    <span class="section-subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg> Hot Opportunities</span>
+                    <h2 class="section-title mx-auto">Featured Job Openings</h2>
+                    <p class="section-desc mx-auto">Handpicked roles from top companies actively hiring right now.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <!-- Job 1 -->
+                    <div class="job-card animate-on-scroll animate-delay-1">
+                        <div class="job-card-header">
+                            <div class="job-company-logo" style="background: linear-gradient(135deg, #1A6B4E, #3D9B7A);">T</div>
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Senior Frontend Engineer</h4>
+                                <p style="margin: 0; font-size: 0.875rem;">TechCorp Inc.</p>
+                            </div>
+                        </div>
+                        <div class="job-meta">
+                            <span class="job-tag featured"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Featured</span>
+                            <span class="job-tag">Remote</span>
+                            <span class="job-tag">$120K – $180K</span>
+                        </div>
+                        <p style="font-size: 0.9375rem;">Build scalable, performant user interfaces using React, TypeScript, and modern web technologies in a fast-paced startup environment.</p>
+                        <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="job-card animate-on-scroll animate-delay-2">
+                        <div class="job-card-header">
+                            <div class="job-company-logo" style="background: linear-gradient(135deg, #6B5B95, #8B7DB8);">I</div>
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Product Manager</h4>
+                                <p style="margin: 0; font-size: 0.875rem;">Innovate LLC</p>
+                            </div>
+                        </div>
+                        <div class="job-meta">
+                            <span class="job-tag">New York, NY</span>
+                            <span class="job-tag">$130K – $170K</span>
+                        </div>
+                        <p style="font-size: 0.9375rem;">Lead cross-functional teams to deliver innovative software products from conception to launch with a focus on user-centric design.</p>
+                        <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="job-card animate-on-scroll animate-delay-3">
+                        <div class="job-card-header">
+                            <div class="job-company-logo" style="background: linear-gradient(135deg, #C9A96E, #D4B87A);">D</div>
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Data Scientist</h4>
+                                <p style="margin: 0; font-size: 0.875rem;">DataDrive</p>
+                            </div>
+                        </div>
+                        <div class="job-meta">
+                            <span class="job-tag featured"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Featured</span>
+                            <span class="job-tag">San Francisco</span>
+                            <span class="job-tag">$140K – $200K</span>
+                        </div>
+                        <p style="font-size: 0.9375rem;">Analyze complex data sets to extract actionable insights and build predictive ML models that drive business strategy.</p>
+                        <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: var(--s6);">
+                    <a href="jobs.html" class="btn btn-primary">View All Jobs <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 4: HOW IT WORKS ============ -->
+        <section class="section" style="background: var(--surface);">
+            <div class="container">
+                <div class="text-center animate-on-scroll" style="margin-bottom: var(--s7);">
+                    <span class="section-subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Simple Process</span>
+                    <h2 class="section-title mx-auto">How RecruitPro Works</h2>
+                    <p class="section-desc mx-auto">Get started in minutes with our streamlined recruitment process.</p>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-step animate-on-scroll animate-delay-1">
+                        <h4>Create Your Profile</h4>
+                        <p>Sign up and build a comprehensive profile showcasing your skills, experience, and career aspirations.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll animate-delay-2">
+                        <h4>Get Matched</h4>
+                        <p>Our AI-powered matching engine connects you with relevant opportunities from our partner network.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll animate-delay-3">
+                        <h4>Interview & Connect</h4>
+                        <p>Schedule interviews directly through the platform and communicate seamlessly with recruiters.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll animate-delay-4">
+                        <h4>Land Your Dream Job</h4>
+                        <p>Receive offers, negotiate terms, and start your new career journey with confidence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 5: STATS BANNER ============ -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item animate-on-scroll">
+                        <h3 data-count="50000" data-suffix="+">0</h3>
+                        <p>Successful Placements</p>
+                    </div>
+                    <div class="stat-item animate-on-scroll animate-delay-1">
+                        <h3 data-count="2500" data-suffix="+">0</h3>
+                        <p>Partner Companies</p>
+                    </div>
+                    <div class="stat-item animate-on-scroll animate-delay-2">
+                        <h3 data-count="35" data-suffix="+">0</h3>
+                        <p>Industries Served</p>
+                    </div>
+                    <div class="stat-item animate-on-scroll animate-delay-3">
+                        <h3 data-count="12">0</h3>
+                        <p>Global Offices</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 6: WHY CHOOSE US ============ -->
+        <section class="section" style="background: var(--bg);">
+            <div class="container">
+                <div class="text-center animate-on-scroll" style="margin-bottom: var(--s7);">
+                    <span class="section-subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M12 3v18"></path><path d="m4.93 4.93 14.14 14.14"></path><path d="M3 12h18"></path><path d="m19.07 4.93-14.14 14.14"></path></svg> Why RecruitPro</span>
+                    <h2 class="section-title mx-auto">Built for Modern Recruitment</h2>
+                    <p class="section-desc mx-auto">We combine cutting-edge technology with a human touch to deliver exceptional results.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card animate-on-scroll animate-delay-1">
+                        <div class="feature-icon icon-blue"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></div>
+                        <h4>AI-Powered Matching</h4>
+                        <p>Our intelligent algorithms analyze skills, experience, and culture fit to deliver the most relevant opportunities.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll animate-delay-2">
+                        <div class="feature-icon icon-green"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+                        <h4>Lightning Fast Hiring</h4>
+                        <p>Reduce time-to-hire by 60% with automated screening, scheduling, and seamless communication tools.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll animate-delay-3">
+                        <div class="feature-icon icon-purple"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
+                        <h4>Enterprise Security</h4>
+                        <p>Your data is protected with bank-grade encryption and SOC 2 compliant infrastructure.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll animate-delay-4">
+                        <div class="feature-icon icon-orange"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
+                        <h4>Advanced Analytics</h4>
+                        <p>Gain actionable insights with real-time dashboards tracking every stage of the recruitment pipeline.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 7: TESTIMONIALS ============ -->
+        <section class="section" style="background: var(--surface);">
+            <div class="container">
+                <div class="text-center animate-on-scroll" style="margin-bottom: var(--s7);">
+                    <span class="section-subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Client Stories</span>
+                    <h2 class="section-title mx-auto">What Our Clients Say</h2>
+                    <p class="section-desc mx-auto">Hear from the companies and candidates who trust RecruitPro.</p>
+                </div>
+
+                <div class="grid grid-3" style="gap: var(--s5);">
+                    <div class="testimonial-card animate-on-scroll animate-delay-1">
+                        <p class="testimonial-text">RecruitPro transformed our hiring process. We filled 15 critical engineering roles in under 6 weeks — something that previously took us months.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SM</div>
+                            <div>
+                                <div class="testimonial-name">Sarah Mitchell</div>
+                                <div class="testimonial-role">VP of Engineering, TechCorp</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll animate-delay-2">
+                        <p class="testimonial-text">I was matched with my dream role in just two weeks. The platform was incredibly intuitive, and my recruiter was exceptional throughout the process.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JC</div>
+                            <div>
+                                <div class="testimonial-name">James Chen</div>
+                                <div class="testimonial-role">Senior Product Designer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll animate-delay-3">
+                        <p class="testimonial-text">The quality of candidates we receive through RecruitPro is consistently outstanding. It's become our primary hiring channel for all senior positions.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">AR</div>
+                            <div>
+                                <div class="testimonial-name">Amara Rodriguez</div>
+                                <div class="testimonial-role">Head of HR, DataDrive</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 8: CTA BANNER ============ -->
+        <section class="section" style="background: var(--bg);">
+            <div class="container">
+                <div class="cta-banner animate-on-scroll">
+                    <h2 style="font-size: clamp(1.75rem, 4vw, 2.5rem); max-width: 600px; margin: 0 auto var(--s4);">Ready to Build Your <span class="text-gradient" style="-webkit-text-fill-color: white; background: linear-gradient(135deg, #fff, var(--secondary)); -webkit-background-clip: text;">Dream Team</span>?</h2>
+                    <p style="max-width: 520px; margin: 0 auto var(--s6); font-size: 1.0625rem;">Join thousands of companies who trust RecruitPro to find, attract, and hire the best talent in the world.</p>
+                    <div class="flex-center gap-4 flex-wrap" style="position: relative; z-index: 1;">
+                        <a href="contact.html" class="btn btn-lg" style="background: white; color: var(--primary-dark); font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">Get Started Free <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        <a href="about.html" class="btn btn-lg" style="background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.25); color: white;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Recruit<span>Pro</span>.</div>
+                    <p style="max-width: 300px; margin-bottom: var(--s5);">Empowering careers and connecting top-tier talent with the world's most innovative companies since 2018.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">ig</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="employer-dashboard.html">Post a Job</a></li>
+                        <li><a href="candidate-dashboard.html">Candidate Portal</a></li>
+                        <li><a href="coming-soon.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="coming-soon.html">Careers</a></li>
+                        <li><a href="coming-soon.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="coming-soon.html">Privacy Policy</a></li>
+                        <li><a href="coming-soon.html">Terms of Service</a></li>
+                        <li><a href="coming-soon.html">Cookie Policy</a></li>
+                        <li><a href="coming-soon.html">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RecruitPro. All rights reserved.</p>
+                <p>Made with <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>️ for better hiring</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

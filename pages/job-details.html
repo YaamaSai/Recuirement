@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for the Senior Frontend Engineer position at TechCorp Inc. on RecruitPro.">
+    <title>Senior Frontend Engineer | RecruitPro</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="../assets/js/main.js" defer></script>
+
+    <style>
+        .job-detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--s7);
+            margin-top: var(--s6);
+            margin-bottom: var(--s6);
+        }
+        .job-detail-content h3 {
+            margin-top: var(--s6);
+            margin-bottom: var(--s3);
+            font-size: 1.5rem;
+        }
+        .job-detail-content p, .job-detail-content ul {
+            margin-bottom: var(--s4);
+            color: var(--text-secondary);
+        }
+        .job-detail-content ul {
+            padding-left: var(--s5);
+            list-style: disc;
+        }
+        .job-detail-content li {
+            margin-bottom: var(--s2);
+            line-height: 1.7;
+        }
+        .apply-sidebar {
+            background: var(--surface);
+            padding: var(--s6);
+            border-radius: var(--r-xl);
+            border: 1px solid var(--border-light);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            box-shadow: var(--shadow-md);
+        }
+        .success-modal { text-align: center; padding: var(--s5) 0; }
+        .success-icon {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, #1A6B4E, #3D9B7A);
+            color: white; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; margin-bottom: var(--s4);
+        }
+        .similar-jobs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s5); }
+        .company-culture-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--s4); }
+        .culture-item {
+            background: var(--surface); border-radius: var(--r-lg); padding: var(--s5);
+            border: 1px solid var(--border-light); text-align: center;
+            transition: all var(--t-normal) var(--ease); box-shadow: var(--shadow-xs);
+        }
+        .culture-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .culture-icon {
+            width: 48px; height: 48px; border-radius: var(--r-md);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto var(--s3); font-size: 1.25rem;
+        }
+        @media (max-width: 992px) {
+            .job-detail-layout { grid-template-columns: 1fr; }
+            .apply-sidebar { position: static; }
+        }
+    </style>
+
+    <script>document.documentElement.dir = localStorage.getItem('dir') || 'ltr';</script>
+</head>
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Recruit<span>Pro</span>.</a>
+            <nav class="nav-menu">
+                <div class="nav-item-dropdown">
+                    <span class="nav-link" style="cursor: pointer;">Home ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="index.html">Home 1 (Default)</a>
+                        <a href="index-2.html">Home 2 (New)</a>
+                    </div>
+                </div>
+                <a href="jobs.html" class="nav-link active">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="nav-item-dropdown">
+                    <span class="nav-link" style="cursor: pointer;">Dashboards ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="candidate-dashboard.html">Candidate Portal</a>
+                        <a href="employer-dashboard.html">Employer Portal</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+                <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="login.html" class="btn btn-primary" style="padding: var(--s2) var(--s5);">Login</a>
+            </div>
+            <button class="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ SECTION 1: PAGE HEADER ============ -->
+        <section class="page-header" style="min-height: auto; padding: var(--s8) 0; text-align: left;">
+            <div class="container" style="position: relative; z-index: 1;">
+                <div style="display: flex; flex-direction: column; gap: var(--s5); background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--r-2xl); padding: var(--s6); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);">
+                    <div style="display: flex; gap: var(--s6); align-items: flex-start; flex-wrap: wrap;">
+                        <!-- Logo -->
+                        <div id="job-header-logo" style="width: 88px; height: 88px; border-radius: var(--r-xl); display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; color: white; background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05)); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3), 0 10px 20px rgba(0,0,0,0.15);"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+                        <!-- Content -->
+                        <div style="flex: 1; min-width: 250px;">
+                            <div style="display: flex; align-items: center; gap: var(--s4); margin-bottom: var(--s2); flex-wrap: wrap;">
+                                <h1 id="job-header-title" style="margin: 0; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Job Application</h1>
+                                <span style="background: rgba(52, 199, 89, 0.2); color: #a7f3d0; border: 1px solid rgba(52, 199, 89, 0.3); padding: 4px 12px; border-radius: var(--r-full); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Actively Hiring</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s5); flex-wrap: wrap;">
+                                <span style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.95); font-size: 1.125rem; font-weight: 500;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                                    <span id="job-header-company">Join our Partner Companies</span>
+                                </span>
+                                <span style="color: rgba(255,255,255,0.3);">•</span>
+                                <span style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.75); font-size: 0.9375rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    Posted recently
+                                </span>
+                            </div>
+                            <div id="job-header-tags" style="display: flex; gap: var(--s3); flex-wrap: wrap;">
+                                <span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.1); padding: 6px 16px; border-radius: var(--r-full); color: white; font-size: 0.875rem; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Apply Now</span>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div id="job-header-actions" style="display: flex; gap: var(--s3); flex-direction: column; align-items: flex-end; justify-content: center; min-width: 160px; margin-top: var(--s2);">
+                            <button onclick="document.getElementById('apply-form-container').scrollIntoView({behavior: 'smooth'})" class="btn" style="background: white; color: var(--primary-dark); width: 100%; justify-content: center; font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,0.15); padding: 12px 24px;">Apply Now <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></button>
+                            <button class="btn btn-secondary" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white; width: 100%; justify-content: center;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                                Save Job
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 2: JOB DETAILS + APPLICATION FORM ============ -->
+        <section class="section" style="padding-top: var(--s6);">
+            <div class="container job-detail-layout" style="margin-top: 0;">
+                <!-- JOB CONTENT -->
+                <div class="job-detail-content">
+                    <h3>About the Role</h3>
+                    <p>We are looking for a talented professional to join our core product team. You will be responsible for architecting and building scalable, performant solutions using modern technologies. You'll collaborate closely with our designers, product managers, and engineering teams to deliver a world-class experience to millions of users globally.</p>
+                    <p>If you are passionate about performance, accessibility, and clean code, we want to talk to you!</p>
+
+                    <h3>Key Responsibilities</h3>
+                    <ul>
+                        <li>Architect and develop complex components and application features.</li>
+                        <li>Collaborate with UI/UX designers to translate mockups into highly responsive, interactive experiences.</li>
+                        <li>Optimize applications for maximum speed, scalability, and accessibility.</li>
+                        <li>Participate in code reviews, write comprehensive unit and integration tests.</li>
+                        <li>Mentor junior team members and contribute to our internal standards.</li>
+                    </ul>
+
+                    <h3>Requirements & Qualifications</h3>
+                    <ul>
+                        <li>3+ years of professional experience in your respective field.</li>
+                        <li>Deep expertise in modern development frameworks and languages.</li>
+                        <li>Strong proficiency with problem solving and system design.</li>
+                        <li>Excellent communication skills and the ability to work in a fully remote, asynchronous environment.</li>
+                        <li>Solid understanding of performance optimization techniques.</li>
+                    </ul>
+
+                    <h3>Benefits & Perks</h3>
+                    <ul>
+                        <li>Competitive base salary plus equity options.</li>
+                        <li>Comprehensive health, dental, and vision insurance.</li>
+                        <li>Unlimited PTO policy and generous parental leave.</li>
+                        <li>$2,000 annual home office setup stipend.</li>
+                        <li>Annual learning and development budget.</li>
+                        <li>Flexible working hours and 100% remote flexibility.</li>
+                    </ul>
+                </div>
+
+                <!-- APPLY SIDEBAR -->
+                <aside class="apply-sidebar">
+                    <div id="apply-form-container">
+                        <h3 style="margin-bottom: var(--s4);">Quick Apply</h3>
+                        <form id="job-application-form">
+                            <div style="margin-bottom: var(--s4);">
+                                <label class="form-label" for="fullName">Full Name <span style="color: var(--error);">*</span></label>
+                                <input type="text" id="fullName" class="form-control" placeholder="Jane Doe" required>
+                            </div>
+                            <div style="margin-bottom: var(--s4);">
+                                <label class="form-label" for="email">Email Address <span style="color: var(--error);">*</span></label>
+                                <input type="email" id="email" class="form-control" placeholder="jane@example.com" required>
+                            </div>
+                            <div style="margin-bottom: var(--s4);">
+                                <label class="form-label" for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 000-0000">
+                            </div>
+                            <div style="margin-bottom: var(--s4);">
+                                <label class="form-label" for="resume">Resume / CV <span style="color: var(--error);">*</span></label>
+                                <input type="file" id="resume" class="form-control" accept=".pdf,.doc,.docx" required>
+                                <small style="color: var(--text-tertiary); margin-top: var(--s1); display: block;">PDF or Word format (Max 5MB)</small>
+                            </div>
+                            <div style="margin-bottom: var(--s5);">
+                                <label class="form-label" for="coverLetter">Cover Letter (Optional)</label>
+                                <textarea id="coverLetter" class="form-control" rows="4" placeholder="Tell us why you are a great fit for this role..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+                        </form>
+                    </div>
+                    <!-- Success Message -->
+                    <div id="success-message" class="success-modal" style="display: none;">
+                        <div class="success-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <h3 style="margin-bottom: var(--s2);">Application Submitted!</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--s5);">Thank you for applying. We have received your application and will review it shortly.</p>
+                        <a href="jobs.html" class="btn btn-secondary" style="width: 100%;">Browse More Jobs</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 3: COMPANY CULTURE ============ -->
+        <section class="section" style="background: var(--surface);">
+            <div class="container">
+                <div class="text-center animate-on-scroll" style="margin-bottom: var(--s7);">
+                    <span class="section-subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> Life at the Company</span>
+                    <h2 class="section-title mx-auto">Why You'll Love Working Here</h2>
+                    <p class="section-desc mx-auto">Our partner companies offer exceptional work environments and benefits.</p>
+                </div>
+                <div class="company-culture-grid">
+                    <div class="culture-item animate-on-scroll animate-delay-1">
+                        <div class="culture-icon" style="background: linear-gradient(135deg, rgba(0,122,255,0.12), rgba(0,122,255,0.04)); color: #007AFF;"><svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                        <h4 style="font-size: 0.9375rem;">Collaborative Teams</h4>
+                        <p style="font-size: 0.8125rem; margin-bottom: 0;">Work alongside talented peers in a supportive, team-first culture.</p>
+                    </div>
+                    <div class="culture-item animate-on-scroll animate-delay-2">
+                        <div class="culture-icon" style="background: linear-gradient(135deg, rgba(52,199,89,0.12), rgba(52,199,89,0.04)); color: #34C759;"><svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg></div>
+                        <h4 style="font-size: 0.9375rem;">Growth Focused</h4>
+                        <p style="font-size: 0.8125rem; margin-bottom: 0;">Annual learning budgets and clear career progression paths.</p>
+                    </div>
+                    <div class="culture-item animate-on-scroll animate-delay-3">
+                        <div class="culture-icon" style="background: linear-gradient(135deg, rgba(88,86,214,0.12), rgba(88,86,214,0.04)); color: #5856D6;"><svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div>
+                        <h4 style="font-size: 0.9375rem;">Remote Flexibility</h4>
+                        <p style="font-size: 0.8125rem; margin-bottom: 0;">Work from anywhere with flexible hours and async workflows.</p>
+                    </div>
+                    <div class="culture-item animate-on-scroll animate-delay-4">
+                        <div class="culture-icon" style="background: linear-gradient(135deg, rgba(255,149,0,0.12), rgba(255,149,0,0.04)); color: #FF9500;"><svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+                        <h4 style="font-size: 0.9375rem;">Wellness Benefits</h4>
+                        <p style="font-size: 0.8125rem; margin-bottom: 0;">Comprehensive health coverage, mental health support, and unlimited PTO.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 4: SIMILAR JOBS ============ -->
+        <section class="section" style="background: var(--bg);">
+            <div class="container">
+                <div class="text-center animate-on-scroll" style="margin-bottom: var(--s7);">
+                    <span class="section-subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> More Opportunities</span>
+                    <h2 class="section-title mx-auto">Similar Roles You May Like</h2>
+                </div>
+                <div class="similar-jobs-grid">
+                    <div class="job-card animate-on-scroll animate-delay-1">
+                        <div class="job-card-header">
+                            <div class="job-company-logo" style="background: linear-gradient(135deg, #6B5B95, #8B7DB8);">I</div>
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Product Manager</h4>
+                                <p style="margin: 0; font-size: 0.875rem;">Innovate LLC</p>
+                            </div>
+                        </div>
+                        <div class="job-meta">
+                            <span class="job-tag">New York, NY</span>
+                            <span class="job-tag">$130K – $170K</span>
+                        </div>
+                        <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Lead cross-functional teams to deliver innovative software products.</p>
+                        <a href="job-details.html" class="btn btn-primary" style="width: 100%;">View Role</a>
+                    </div>
+                    <div class="job-card animate-on-scroll animate-delay-2">
+                        <div class="job-card-header">
+                            <div class="job-company-logo" style="background: linear-gradient(135deg, #C9A96E, #D4B87A);">D</div>
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Data Scientist</h4>
+                                <p style="margin: 0; font-size: 0.875rem;">DataDrive</p>
+                            </div>
+                        </div>
+                        <div class="job-meta">
+                            <span class="job-tag featured"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Featured</span>
+                            <span class="job-tag">San Francisco</span>
+                            <span class="job-tag">$140K – $200K</span>
+                        </div>
+                        <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Analyze complex data sets and build predictive ML models.</p>
+                        <a href="job-details.html" class="btn btn-primary" style="width: 100%;">View Role</a>
+                    </div>
+                    <div class="job-card animate-on-scroll animate-delay-3">
+                        <div class="job-card-header">
+                            <div class="job-company-logo" style="background: linear-gradient(135deg, #5856D6, #AF52DE);">C</div>
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Backend Engineer</h4>
+                                <p style="margin: 0; font-size: 0.875rem;">CloudSystems</p>
+                            </div>
+                        </div>
+                        <div class="job-meta">
+                            <span class="job-tag">Remote</span>
+                            <span class="job-tag">$140K – $190K</span>
+                        </div>
+                        <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Architect robust microservices using Node.js and AWS.</p>
+                        <a href="job-details.html" class="btn btn-primary" style="width: 100%;">View Role</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 5: CTA BANNER ============ -->
+        <section class="section" style="background: var(--surface);">
+            <div class="container">
+                <div class="cta-banner animate-on-scroll">
+                    <h2 style="font-size: clamp(1.75rem, 4vw, 2.5rem); max-width: 600px; margin: 0 auto var(--s4);">Didn't Find the <span style="background: linear-gradient(135deg, #fff, var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Right Role</span>?</h2>
+                    <p style="max-width: 520px; margin: 0 auto var(--s6); font-size: 1.0625rem;">Create your profile and we'll notify you when matching positions become available.</p>
+                    <div class="flex-center gap-4 flex-wrap" style="position: relative; z-index: 1;">
+                        <a href="candidate-dashboard.html" class="btn btn-lg" style="background: white; color: var(--primary-dark); font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">Create Profile <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        <a href="jobs.html" class="btn btn-lg" style="background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.25); color: white;">Browse All Jobs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Recruit<span>Pro</span>.</div>
+                    <p style="max-width: 300px; margin-bottom: var(--s5);">Empowering careers and connecting top-tier talent with the world's most innovative companies since 2018.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">ig</a>
+                    </div>
+                </div>
+                <div><h4>Platform</h4><ul class="footer-links"><li><a href="jobs.html">Browse Jobs</a></li><li><a href="employer-dashboard.html">Post a Job</a></li><li><a href="candidate-dashboard.html">Candidate Portal</a></li><li><a href="coming-soon.html">Pricing</a></li></ul></div>
+                <div><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="coming-soon.html">Careers</a></li><li><a href="coming-soon.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div><h4>Legal</h4><ul class="footer-links"><li><a href="coming-soon.html">Privacy Policy</a></li><li><a href="coming-soon.html">Terms of Service</a></li><li><a href="coming-soon.html">Cookie Policy</a></li><li><a href="coming-soon.html">GDPR</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RecruitPro. All rights reserved.</p>
+                <p>Made with <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>️ for better hiring</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Intercept Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('job-application-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    document.getElementById('apply-form-container').style.display = 'none';
+                    const successModal = document.getElementById('success-message');
+                    successModal.style.display = 'block';
+                    successModal.style.opacity = '0';
+                    setTimeout(() => {
+                        successModal.style.transition = 'opacity 0.5s ease';
+                        successModal.style.opacity = '1';
+                    }, 50);
+                });
+            }
+
+            // Dynamically load job details from sessionStorage
+            const jobData = sessionStorage.getItem('currentJobApply');
+            if (jobData) {
+                try {
+                    const job = JSON.parse(jobData);
+                    if (job.title) {
+                        document.getElementById('job-header-title').textContent = job.title;
+                        document.title = job.title + ' | RecruitPro';
+                    }
+                    if (job.company) document.getElementById('job-header-company').textContent = job.company;
+                    if (job.logo) {
+                        const logoEl = document.getElementById('job-header-logo');
+                        logoEl.textContent = job.logo;
+                        if (job.logoBg) logoEl.style.background = job.logoBg;
+                    }
+                    if (job.tags && job.tags.length > 0) {
+                        const tagsContainer = document.getElementById('job-header-tags');
+                        tagsContainer.innerHTML = '';
+                        job.tags.forEach(tag => {
+                            const span = document.createElement('span');
+                            span.style = 'background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.1); padding: 6px 16px; border-radius: var(--r-full); color: white; font-size: 0.875rem; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);';
+                            span.textContent = tag;
+                            tagsContainer.appendChild(span);
+                        });
+                    }
+                } catch (e) {
+                    console.error("Error parsing job data", e);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

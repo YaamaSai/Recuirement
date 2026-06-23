@@ -1,0 +1,51 @@
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1875rem;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Dashboard Layout
+   ========================================================================== */
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 75px);
+  width: 100%;
+}
+
+.sidebar {
+  width: 280px;
+  background: var(--surface);
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: calc(100vh - 75px);
+  position: sticky;
+  top: 75px;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  padding: var(--s5) var(--s4) var(--s3);
+}
+
+.sidebar-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-menu li a {
+  display: block;
+  padding: var(--s3) var(--s4);
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: all var(--t-fast);
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {

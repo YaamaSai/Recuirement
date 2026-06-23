@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | RecruitPro</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <script src="../assets/js/main.js" defer></script>
+
+    <script>document.documentElement.dir = localStorage.getItem('dir') || 'ltr';</script>
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Recruit<span>Pro</span>.</a>
+            
+            <button class="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+                                                <nav class="nav-menu">
+                <div class="nav-item-dropdown">
+                    <span class="nav-link" style="cursor: pointer;">Home ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="index.html">Home 1 (Default)</a>
+                        <a href="index-2.html">Home 2 (New)</a>
+                    </div>
+                </div>
+                <a href="jobs.html" class="nav-link">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="nav-item-dropdown">
+                    <span class="nav-link" style="cursor: pointer;">Dashboards ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="candidate-dashboard.html">Candidate Portal</a>
+                        <a href="employer-dashboard.html">Employer Portal</a>
+                    </div>
+                </div>
+            
+                </nav>
+                <div class="nav-actions">
+                    
+                <button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+                <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="login.html" class="btn btn-primary" style="padding: var(--s2) var(--s5);">Login</a>
+            
+                </div>
+        </div>
+    </header>
+
+    <main style="flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--s5); position: relative; overflow: hidden;">
+        <!-- Decorative background -->
+        <div style="position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%); top: -150px; right: -100px; pointer-events: none;"></div>
+        <div style="position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(90,200,250,0.1) 0%, transparent 70%); bottom: -100px; left: -50px; pointer-events: none;"></div>
+
+        <div style="position: relative; z-index: 1;">
+            <div style="font-size: clamp(6rem, 15vw, 10rem); font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: var(--s4); letter-spacing: -0.05em; opacity: 0.9;">404</div>
+            <h2 style="margin-bottom: var(--s4);">Oops! This Page Has Gone Missing</h2>
+            <p style="max-width: 480px; margin: 0 auto var(--s6); font-size: 1.0625rem;">The page you're looking for might have been removed, renamed, or is temporarily unavailable. Let's get you back on track.</p>
+            <div class="flex-center gap-4 flex-wrap">
+                <a href="index.html" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Back to Home</a>
+                <a href="contact.html" class="btn btn-secondary btn-lg">Contact Support</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

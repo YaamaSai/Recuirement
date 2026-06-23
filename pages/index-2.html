@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="RecruitPro — Premium recruitment and staffing agency connecting world-class talent with industry-leading companies. Find your dream job or hire top talent today.">
+    <title>RecruitPro | Home Alternative</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="../assets/js/main.js" defer></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EmploymentAgency",
+      "name": "RecruitPro",
+      "url": "#",
+      "description": "Premium Recruitment & Staffing Agency"
+    }
+    </script>
+
+    <script>document.documentElement.dir = localStorage.getItem('dir') || 'ltr';</script>
+</head>
+
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Recruit<span>Pro</span>.</a>
+
+            <nav class="nav-menu">
+                <div class="nav-item-dropdown">
+                    <span class="nav-link active" style="cursor: pointer;">Home ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="index.html">Home 1 (Default)</a>
+                        <a href="index-2.html" class="active">Home 2 (New)</a>
+                    </div>
+                </div>
+                <a href="jobs.html" class="nav-link">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="nav-item-dropdown">
+                    <span class="nav-link" style="cursor: pointer;">Dashboards ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="candidate-dashboard.html">Candidate Portal</a>
+                        <a href="employer-dashboard.html">Employer Portal</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+                <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="login.html" class="btn btn-primary" style="padding: var(--s2) var(--s5);">Login</a>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ SECTION 1: CENTERED SEARCH HERO ============ -->
+        <section class="hero-centered"
+            style="padding: 60px 0 160px; background: url('../assets/images/office-building.png') center/cover no-repeat; color: white; text-align: center; position: relative; overflow: hidden;">
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 1;">
+            </div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <span class="section-subtitle animate-on-scroll"
+                    style="color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.2);">The Future of
+                    Hiring</span>
+                <h1 class="animate-on-scroll animate-delay-1"
+                    style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: var(--s4); line-height: 1.1; font-weight: 800; text-shadow: 0 4px 12px rgba(0,0,0,0.3); color: white;">
+                    Discover Your Next <br /> <span style="color: #64D2FF;">Great Opportunity</span>
+                </h1>
+                <p class="animate-on-scroll animate-delay-2"
+                    style="max-width: 600px; margin: 0 auto var(--s6); font-size: 1.125rem; color: rgba(255,255,255,0.95); text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                    Join our exclusive network of top-tier professionals and innovative companies. Your dream job is
+                    just a search away.
+                </p>
+
+                <form action="jobs.html" class="hero-search-box animate-on-scroll animate-delay-3"
+                    style="max-width: 800px; margin: 0 auto; display: flex; gap: var(--s2); background: rgba(255,255,255,0.15); padding: var(--s3); border-radius: var(--r-lg); backdrop-filter: blur(12px); flex-wrap: wrap; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+                    <input type="text" class="form-control hero-input" placeholder="Job title, keyword or company"
+                        style="flex: 2; min-width: 200px; background: var(--surface); color: var(--text);">
+                    <input type="text" class="form-control hero-input" placeholder="City, state, or 'Remote'"
+                        style="flex: 1; min-width: 150px; background: var(--surface); color: var(--text);">
+                    <button type="submit" class="btn btn-secondary hero-search-btn"
+                        style="flex-shrink: 0; padding: var(--s3) var(--s5); font-size: 1.125rem;">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 2: TOP INDUSTRIES ============ -->
+        <section class="section" style="background: var(--bg);">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--s6);">
+                    <span class="section-subtitle animate-on-scroll">Explore Sectors</span>
+                    <h2 class="animate-on-scroll animate-delay-1" style="font-size: clamp(2rem, 4vw, 2.5rem);">Top
+                        Hiring Industries</h2>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--s4);">
+                    <a href="jobs.html" class="industry-card animate-on-scroll"
+                        style="background: var(--surface); border: 1px solid var(--border-light); padding: var(--s5); border-radius: var(--r-md); text-align: center; text-decoration: none; color: inherit; transition: all 0.3s ease; display: block;">
+                        <div
+                            style="width: 60px; height: 60px; margin: 0 auto var(--s3); background: rgba(52, 199, 89, 0.1); color: #34C759; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: var(--s2);">Technology</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">1,240 Open Roles</p>
+                    </a>
+
+                    <a href="jobs.html" class="industry-card animate-on-scroll animate-delay-1"
+                        style="background: var(--surface); border: 1px solid var(--border-light); padding: var(--s5); border-radius: var(--r-md); text-align: center; text-decoration: none; color: inherit; transition: all 0.3s ease; display: block;">
+                        <div
+                            style="width: 60px; height: 60px; margin: 0 auto var(--s3); background: rgba(255, 59, 48, 0.1); color: #FF3B30; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: var(--s2);">Healthcare</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">850 Open Roles</p>
+                    </a>
+
+                    <a href="jobs.html" class="industry-card animate-on-scroll animate-delay-2"
+                        style="background: var(--surface); border: 1px solid var(--border-light); padding: var(--s5); border-radius: var(--r-md); text-align: center; text-decoration: none; color: inherit; transition: all 0.3s ease; display: block;">
+                        <div
+                            style="width: 60px; height: 60px; margin: 0 auto var(--s3); background: rgba(0, 122, 255, 0.1); color: #007AFF; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: var(--s2);">Finance</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">620 Open Roles</p>
+                    </a>
+
+                    <a href="jobs.html" class="industry-card animate-on-scroll animate-delay-3"
+                        style="background: var(--surface); border: 1px solid var(--border-light); padding: var(--s5); border-radius: var(--r-md); text-align: center; text-decoration: none; color: inherit; transition: all 0.3s ease; display: block;">
+                        <div
+                            style="width: 60px; height: 60px; margin: 0 auto var(--s3); background: rgba(255, 149, 0, 0.1); color: #FF9500; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: var(--s2);">Design</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">410 Open Roles</p>
+                    </a>
+                </div>
+            </div>
+
+            <style>
+                .industry-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+                    border-color: var(--primary);
+                }
+
+                [data-theme="dark"] .industry-card:hover {
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                }
+            </style>
+        </section>
+
+        <!-- ============ SECTION 3: WHY CHOOSE US (BENTO BOX) ============ -->
+        <section class="section"
+            style="background: var(--bg); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--s6);">
+                    <span class="section-subtitle animate-on-scroll">The RecruitPro Advantage</span>
+                    <h2 class="animate-on-scroll animate-delay-1" style="font-size: clamp(2rem, 4vw, 2.5rem);">A Smarter
+                        Way to Hire & Get Hired</h2>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Box 1: Large (AI Matching) -->
+                    <div class="bento-card bento-large animate-on-scroll">
+                        <div class="bento-overlay"></div>
+                        <div class="bento-content">
+                            <div class="bento-icon" style="background: rgba(255,255,255,0.2); color: white;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <h3 style="font-size: 2rem; margin-bottom: var(--s2); color: white;">AI-Powered Matching
+                            </h3>
+                            <p style="font-size: 1.125rem; color: rgba(255,255,255,0.85); max-width: 400px;">Our
+                                advanced algorithms analyze thousands of data points to instantly recommend the best
+                                candidates for every role with 98% accuracy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Box 2: Square (Verified Employers) -->
+                    <div class="bento-card bento-square animate-on-scroll animate-delay-1">
+                        <div class="bento-icon"
+                            style="background: rgba(52, 199, 89, 0.1); color: #34C759; margin-bottom: var(--s4);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: var(--s2);">Verified Employers</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">Every company goes through a strict
+                            verification process to ensure complete candidate safety and trust.</p>
+                    </div>
+
+                    <!-- Box 3: Rectangle (Faster Hiring) -->
+                    <div class="bento-card bento-rect animate-on-scroll animate-delay-2">
+                        <div class="bento-icon"
+                            style="background: rgba(0, 122, 255, 0.1); color: #007AFF; margin-bottom: var(--s4);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: var(--s2);">Faster Process</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">Reduce time-to-hire by 40% with automated
+                            scheduling and direct messaging.</p>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .bento-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: 1fr 1fr;
+                    gap: var(--s4);
+                }
+
+                .bento-card {
+                    position: relative;
+                    border-radius: var(--r-lg);
+                    overflow: hidden;
+                    padding: var(--s5);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .bento-card:hover {
+                    transform: translateY(-5px);
+                }
+
+                .bento-icon {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .bento-large {
+                    grid-column: span 2;
+                    grid-row: span 2;
+                    background: url('../assets/images/network-abstract.png') center/cover no-repeat;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: var(--s6);
+                    min-height: 400px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                }
+
+                .bento-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 100%);
+                    z-index: 1;
+                }
+
+                .bento-content {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .bento-square {
+                    grid-column: span 1;
+                    grid-row: span 1;
+                    background: var(--surface);
+                    border: 1px solid var(--border-light);
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+                }
+
+                .bento-rect {
+                    grid-column: span 1;
+                    grid-row: span 1;
+                    background: var(--surface);
+                    border: 1px solid var(--border-light);
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+                }
+
+                [data-theme="dark"] .bento-square,
+                [data-theme="dark"] .bento-rect {
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                }
+
+                @media (max-width: 900px) {
+                    .bento-grid {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: auto;
+                    }
+
+                    .bento-large {
+                        grid-column: span 1;
+                        grid-row: span 1;
+                    }
+
+                    .bento-square,
+                    .bento-rect {
+                        grid-column: span 1;
+                        grid-row: span 1;
+                    }
+                }
+            </style>
+        </section>
+
+        <!-- ============ SECTION 4: FEATURED EMPLOYERS ============ -->
+        <section class="section" style="background: var(--bg);">
+            <div class="container">
+                <div class="section-header-flex">
+                    <div>
+                        <span class="section-subtitle animate-on-scroll">Premium Partners</span>
+                        <h2 class="animate-on-scroll animate-delay-1"
+                            style="font-size: clamp(2rem, 4vw, 2.5rem); margin: 0;">Featured Employers</h2>
+                    </div>
+                    <a href="jobs.html" class="btn btn-outline animate-on-scroll animate-delay-2">View All Companies</a>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--s4);">
+                    <div class="job-card animate-on-scroll">
+                        <div style="display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s4);">
+                            <div
+                                style="width: 50px; height: 50px; background: linear-gradient(135deg, #FF3B30, #FF9500); border-radius: var(--r-sm); display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 1.5rem;">
+                                N</div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.125rem;">Nexus Innovations</h3>
+                                <p style="color: var(--text-secondary); margin: 0; font-size: 0.875rem;">Technology &
+                                    Software</p>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9375rem; margin-bottom: var(--s4); color: var(--text-secondary);">
+                            Building the next generation of cloud infrastructure and enterprise software solutions.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: var(--primary);">24 Open Roles</span>
+                            <a href="jobs.html"
+                                style="color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.875rem;">View
+                                Jobs &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="job-card animate-on-scroll animate-delay-1">
+                        <div style="display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s4);">
+                            <div
+                                style="width: 50px; height: 50px; background: linear-gradient(135deg, #4A90E2, #007AFF); border-radius: var(--r-sm); display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 1.5rem;">
+                                G</div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.125rem;">Global Finance Inc.</h3>
+                                <p style="color: var(--text-secondary); margin: 0; font-size: 0.875rem;">Banking &
+                                    Investment</p>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9375rem; margin-bottom: var(--s4); color: var(--text-secondary);">Leading
+                            international investment firm managing over $50B in global assets.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: var(--primary);">18 Open Roles</span>
+                            <a href="jobs.html"
+                                style="color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.875rem;">View
+                                Jobs &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="job-card animate-on-scroll animate-delay-2">
+                        <div style="display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s4);">
+                            <div
+                                style="width: 50px; height: 50px; background: linear-gradient(135deg, #34C759, #30D158); border-radius: var(--r-sm); display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 1.5rem;">
+                                H</div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.125rem;">HealthPlus Group</h3>
+                                <p style="color: var(--text-secondary); margin: 0; font-size: 0.875rem;">Healthcare
+                                    Provider</p>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9375rem; margin-bottom: var(--s4); color: var(--text-secondary);">
+                            Award-winning network of private clinics and specialized medical centers across the country.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: var(--primary);">42 Open Roles</span>
+                            <a href="jobs.html"
+                                style="color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.875rem;">View
+                                Jobs &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 5: SUCCESS METRICS ============ -->
+        <section class="section"
+            style="background: url('../assets/images/meeting-room.png') center/cover no-repeat; background-attachment: fixed; color: white; padding: 60px 0; position: relative;">
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 1;">
+            </div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; gap: var(--s5);">
+                    <div class="animate-on-scroll">
+                        <div
+                            style="font-size: clamp(3rem, 5vw, 4rem); font-weight: 800; margin-bottom: var(--s2); line-height: 1;">
+                            10k+</div>
+                        <p style="font-size: 1.125rem; opacity: 0.9; margin: 0;">Successful Hires</p>
+                    </div>
+                    <div class="animate-on-scroll animate-delay-1">
+                        <div
+                            style="font-size: clamp(3rem, 5vw, 4rem); font-weight: 800; margin-bottom: var(--s2); line-height: 1;">
+                            2.5M</div>
+                        <p style="font-size: 1.125rem; opacity: 0.9; margin: 0;">Registered Users</p>
+                    </div>
+                    <div class="animate-on-scroll animate-delay-2">
+                        <div
+                            style="font-size: clamp(3rem, 5vw, 4rem); font-weight: 800; margin-bottom: var(--s2); line-height: 1;">
+                            850+</div>
+                        <p style="font-size: 1.125rem; opacity: 0.9; margin: 0;">Verified Employers</p>
+                    </div>
+                    <div class="animate-on-scroll animate-delay-3">
+                        <div
+                            style="font-size: clamp(3rem, 5vw, 4rem); font-weight: 800; margin-bottom: var(--s2); line-height: 1;">
+                            14 Days</div>
+                        <p style="font-size: 1.125rem; opacity: 0.9; margin: 0;">Avg. Time to Hire</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 6: JOB ALERTS CTA ============ -->
+        <section class="section" style="background: var(--surface);">
+            <div class="container">
+                <div style="max-width: 600px; margin: 0 auto; text-align: center;" class="animate-on-scroll">
+                    <div
+                        style="width: 80px; height: 80px; background: rgba(26, 107, 78, 0.1); color: var(--primary); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto var(--s4); font-size: 2rem;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0">
+                            </path>
+                        </svg>
+                    </div>
+                    <h2 style="font-size: clamp(1.75rem, 4vw, 2.25rem); margin-bottom: var(--s3);">Never Miss an
+                        Opportunity</h2>
+                    <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: var(--s5);">Get the
+                        latest jobs delivered straight to your inbox. We respect your privacy and never spam.</p>
+
+                    <form style="display: flex; gap: var(--s2); max-width: 450px; margin: 0 auto; flex-wrap: wrap;">
+                        <input type="email" class="form-control" placeholder="Enter your email address" required
+                            style="flex: 2; min-width: 200px;">
+                        <button type="submit" class="btn btn-primary" style="flex-shrink: 0;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Recruit<span>Pro</span>.</div>
+                    <p style="max-width: 300px; margin-bottom: var(--s5);">Empowering careers and connecting top-tier
+                        talent with the world's most innovative companies since 2018.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">ig</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="employer-dashboard.html">Post a Job</a></li>
+                        <li><a href="candidate-dashboard.html">Candidate Portal</a></li>
+                        <li><a href="coming-soon.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="coming-soon.html">Careers</a></li>
+                        <li><a href="coming-soon.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="coming-soon.html">Privacy Policy</a></li>
+                        <li><a href="coming-soon.html">Terms of Service</a></li>
+                        <li><a href="coming-soon.html">Cookie Policy</a></li>
+                        <li><a href="coming-soon.html">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RecruitPro. All rights reserved.</p>
+                <p>Made with <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                    </svg>️ for better hiring</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

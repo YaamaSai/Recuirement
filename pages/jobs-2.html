@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse open job positions on RecruitPro. Find your next great career opportunity today.">
+    <title>Browse Jobs - Page 2 | RecruitPro</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/jobs-filter.js" defer></script>
+
+    <style>
+        .jobs-layout { display: flex; gap: var(--s6); margin-top: var(--s6); margin-bottom: var(--s8); }
+        .jobs-sidebar { width: 280px; flex-shrink: 0; background: var(--surface); padding: var(--s5); border-radius: var(--r-xl); border: 1px solid var(--border-light); height: fit-content; position: sticky; top: 100px; box-shadow: var(--shadow-card); }
+        .jobs-main { flex: 1; }
+        .jobs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--s5); }
+        .filter-group { margin-bottom: var(--s5); padding-bottom: var(--s5); border-bottom: 1px solid var(--border-light); }
+        .filter-group:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .filter-title { font-size: 0.8125rem; font-weight: 700; margin-bottom: var(--s3); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary); }
+        .filter-label { display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s2); cursor: pointer; font-size: 0.9375rem; color: var(--text-secondary); transition: color var(--t-fast); }
+        .filter-label:hover { color: var(--text); }
+        .filter-label input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; }
+        .pagination { display: flex; justify-content: center; gap: var(--s2); margin-top: var(--s7); }
+        .page-link { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: var(--r-md); background: var(--surface); border: 1px solid var(--border-light); color: var(--text); font-weight: 600; transition: all var(--t-fast); box-shadow: var(--shadow-xs); }
+        .page-link:hover, .page-link.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 4px 12px var(--primary-glow); }
+        .page-link.wide { width: auto; padding: 0 var(--s4); }
+        .category-chips { display: flex; gap: var(--s2); flex-wrap: wrap; justify-content: center; }
+        .category-chip { padding: 8px 20px; border-radius: var(--r-full); border: 1.5px solid var(--border-light); background: var(--surface); color: var(--text-secondary); font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all var(--t-fast); box-shadow: var(--shadow-xs); }
+        .category-chip:hover, .category-chip.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 4px 12px var(--primary-glow); }
+        .job-alert-banner { background: linear-gradient(135deg, rgba(26, 107, 78, 0.06), rgba(201, 169, 110, 0.06)); border: 1px solid var(--border-light); border-radius: var(--r-2xl); padding: var(--s7); text-align: center; }
+        @media (max-width: 768px) {
+            .jobs-layout { flex-direction: column; }
+            .jobs-sidebar { width: 100%; position: static; }
+        }
+    </style>
+
+    <script>document.documentElement.dir = localStorage.getItem('dir') || 'ltr';</script>
+</head>
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Recruit<span>Pro</span>.</a>
+            <nav class="nav-menu">
+                <div class="nav-item-dropdown">
+                    <span class="nav-link" style="cursor: pointer;">Home ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="index.html">Home 1 (Default)</a>
+                        <a href="index-2.html">Home 2 (New)</a>
+                    </div>
+                </div>
+                <a href="jobs.html" class="nav-link active">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="nav-item-dropdown">
+                    <span class="nav-link" style="cursor: pointer;">Dashboards ▾</span>
+                    <div class="nav-dropdown-content">
+                        <a href="candidate-dashboard.html">Candidate Portal</a>
+                        <a href="employer-dashboard.html">Employer Portal</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <button class="rtl-toggle-btn" aria-label="Toggle RTL">RTL</button>
+                <button class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="login.html" class="btn btn-primary" style="padding: var(--s2) var(--s5);">Login</a>
+            </div>
+            <button class="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ SECTION 1: PAGE HEADER ============ -->
+        <section class="page-header" style="min-height: 40vh;">
+            <div class="container">
+                <h1 style="margin-bottom: var(--s4);">Find Your Dream Job</h1>
+                <p style="margin-bottom: var(--s6);">Explore thousands of opportunities from the world's leading companies.</p>
+                <form id="job-search-form" class="needs-validation" novalidate style="max-width: 800px; margin: 0 auto; display: flex; gap: var(--s2); flex-wrap: wrap; position: relative; z-index: 1;">
+                    <input type="text" id="search-title" class="form-control" placeholder="Job title, keywords, or company" style="flex: 2; min-width: 200px; background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); color: white; backdrop-filter: blur(8px);">
+                    <input type="text" id="search-location" class="form-control" placeholder="Location or Remote" style="flex: 1; min-width: 150px; background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); color: white; backdrop-filter: blur(8px);">
+                    <button type="submit" class="btn" style="flex-shrink: 0; background: white; color: var(--primary-dark); font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">Search Jobs</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 2: CATEGORY CHIPS ============ -->
+        <section style="padding: var(--s6) 0; background: var(--surface); border-bottom: 1px solid var(--border-light);">
+            <div class="container">
+                <div class="category-chips">
+                    <span class="category-chip active">All Jobs</span>
+                    <span class="category-chip">Engineering</span>
+                    <span class="category-chip">Design</span>
+                    <span class="category-chip">Product</span>
+                    <span class="category-chip">Marketing</span>
+                    <span class="category-chip">Sales</span>
+                    <span class="category-chip">Data Science</span>
+                    <span class="category-chip">DevOps</span>
+                    <span class="category-chip">Remote</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 3: JOB LISTINGS ============ -->
+        <section class="section" style="padding-top: var(--s5);">
+            <div class="container jobs-layout" style="margin-top: 0;">
+                <aside class="jobs-sidebar">
+                    <div class="filter-group">
+                        <h4 class="filter-title">Job Type</h4>
+                        <label class="filter-label"><input type="checkbox" class="filter-job-type" value="Full-time" checked> Full-time</label>
+                        <label class="filter-label"><input type="checkbox" class="filter-job-type" value="Part-time"> Part-time</label>
+                        <label class="filter-label"><input type="checkbox" class="filter-job-type" value="Contract"> Contract</label>
+                        <label class="filter-label"><input type="checkbox" class="filter-job-type" value="Freelance"> Freelance</label>
+                    </div>
+                    <div class="filter-group">
+                        <h4 class="filter-title">Experience Level</h4>
+                        <label class="filter-label"><input type="checkbox" class="filter-experience" value="Entry Level" checked> Entry Level</label>
+                        <label class="filter-label"><input type="checkbox" class="filter-experience" value="Mid Level" checked> Mid Level</label>
+                        <label class="filter-label"><input type="checkbox" class="filter-experience" value="Senior Level" checked> Senior Level</label>
+                        <label class="filter-label"><input type="checkbox" class="filter-experience" value="Executive"> Executive</label>
+                    </div>
+                    <div class="filter-group">
+                        <h4 class="filter-title">Salary Range</h4>
+                        <select id="filter-salary" class="form-control" style="width: 100%; padding: 10px 14px;">
+                            <option value="any">Any Salary</option>
+                            <option value="50k-80k">$50k - $80k</option>
+                            <option value="80k-120k">$80k - $120k</option>
+                            <option value="120k-150k">$120k - $150k</option>
+                            <option value="150k+">$150k+</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <div class="jobs-main">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--s5);">
+                        <p style="margin: 0; font-weight: 600;">Showing 10 jobs (11-20)</p>
+                        <select id="sort-jobs" class="form-control" style="width: auto; padding: var(--s2) var(--s4);">
+                            <option value="relevant">Most Relevant</option>
+                            <option value="newest">Newest</option>
+                            <option value="salary">Salary (High to Low)</option>
+                        </select>
+                    </div>
+
+                    <div class="jobs-grid">
+                        <!-- Job 11 -->
+                        <div class="job-card" data-title="HR Manager" data-company="PeopleFirst" data-location="Denver, CO" data-salary-min="90000" data-salary-max="120000" data-type="Full-time" data-level="Mid Level" data-category="HR">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #34C759, #30D158);">P</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">HR Manager</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">PeopleFirst</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag">Denver, CO</span>
+                                <span class="job-tag">$90K – $120K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Oversee talent acquisition, employee relations, and promote a positive workplace culture.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+
+                        <!-- Job 12 -->
+                        <div class="job-card" data-title="UI Designer" data-company="PixelPerfect" data-location="Remote" data-salary-min="85000" data-salary-max="115000" data-type="Full-time" data-level="Mid Level" data-category="Design">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #FF3B30, #FF9500);">P</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">UI Designer</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">PixelPerfect</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag">Remote</span>
+                                <span class="job-tag">$85K – $115K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Craft visually stunning interfaces and maintain our comprehensive design system.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+
+                        <!-- Job 13 -->
+                        <div class="job-card" data-title="Security Analyst" data-company="CyberSafe" data-location="Washington, DC" data-salary-min="110000" data-salary-max="140000" data-type="Full-time" data-level="Mid Level" data-category="Engineering">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #000000, #434343);">C</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">Security Analyst</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">CyberSafe</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag">Washington, DC</span>
+                                <span class="job-tag">$110K – $140K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Monitor network traffic, perform vulnerability assessments, and respond to security incidents.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+
+                        <!-- Job 14 -->
+                        <div class="job-card" data-title="Mobile App Developer" data-company="AppWorks" data-location="Los Angeles, CA" data-salary-min="120000" data-salary-max="160000" data-type="Full-time" data-level="Mid Level" data-category="Engineering">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #007AFF, #5AC8FA);">A</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">Mobile App Developer</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">AppWorks</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag">Los Angeles, CA</span>
+                                <span class="job-tag">$120K – $160K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Develop high-performance iOS and Android applications using Flutter and Swift.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+
+                        <!-- Job 15 -->
+                        <div class="job-card" data-title="Machine Learning Engineer" data-company="AI Future" data-location="Remote" data-salary-min="150000" data-salary-max="200000" data-type="Full-time" data-level="Senior Level" data-category="Data Science">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #5856D6, #AF52DE);">A</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">Machine Learning Engineer</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">AI Future</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag featured"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Featured</span>
+                                <span class="job-tag">Remote</span>
+                                <span class="job-tag">$150K – $200K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Design and train deep learning models for natural language processing applications.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+
+                        <!-- Job 16 -->
+                        <div class="job-card" data-title="Cloud Architect" data-company="SkyNet" data-location="Dallas, TX" data-salary-min="160000" data-salary-max="210000" data-type="Full-time" data-level="Senior Level" data-category="Engineering">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #8E8E93, #C7C7CC);">S</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">Cloud Architect</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">SkyNet</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag">Dallas, TX</span>
+                                <span class="job-tag">$160K – $210K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Design scalable, secure, and cost-effective cloud architectures on AWS and Azure.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+
+                        <!-- Job 17 -->
+                        <div class="job-card" data-title="Database Administrator" data-company="DataStore" data-location="Miami, FL" data-salary-min="100000" data-salary-max="130000" data-type="Full-time" data-level="Mid Level" data-category="Engineering">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #34C759, #30D158);">D</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">Database Administrator</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">DataStore</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag">Miami, FL</span>
+                                <span class="job-tag">$100K – $130K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Manage, optimize, and secure enterprise database systems including PostgreSQL and MongoDB.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+
+                        <!-- Job 18 -->
+                        <div class="job-card" data-title="QA Engineer" data-company="TestPros" data-location="Toronto, ON" data-salary-min="80000" data-salary-max="110000" data-type="Full-time" data-level="Mid Level" data-category="Engineering">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #FF9500, #FFCC00);">T</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">QA Engineer</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">TestPros</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag">Toronto, ON</span>
+                                <span class="job-tag">$80K – $110K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Write automated tests, perform manual QA, and ensure high-quality software releases.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+
+                        <!-- Job 19 -->
+                        <div class="job-card" data-title="SEO Specialist" data-company="SearchWin" data-location="Remote" data-salary-min="75000" data-salary-max="100000" data-type="Full-time" data-level="Mid Level" data-category="Marketing">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #FF2D55, #FF375F);">S</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">SEO Specialist</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">SearchWin</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag">Remote</span>
+                                <span class="job-tag">$75K – $100K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Optimize website architecture, content, and perform keyword research to drive organic traffic.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+
+                        <!-- Job 20 -->
+                        <div class="job-card" data-title="IT Support Specialist" data-company="HelpDesk Solutions" data-location="Atlanta, GA" data-salary-min="60000" data-salary-max="80000" data-type="Full-time" data-level="Entry Level" data-category="IT">
+                            <div class="job-card-header">
+                                <div class="job-company-logo" style="background: linear-gradient(135deg, #5AC8FA, #007AFF);">H</div>
+                                <div>
+                                    <h4 style="margin-bottom: 2px;">IT Support Specialist</h4>
+                                    <p style="margin: 0; font-size: 0.875rem;">HelpDesk Solutions</p>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-tag">Atlanta, GA</span>
+                                <span class="job-tag">$60K – $80K</span>
+                            </div>
+                            <p style="font-size: 0.9375rem; margin-bottom: var(--s4);">Provide technical assistance, resolve hardware issues, and support internal systems.</p>
+                            <a href="job-details.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="jobs.html" class="page-link wide">Previous</a>
+                        <a href="jobs.html" class="page-link">1</a>
+                        <a href="jobs-2.html" class="page-link active">2</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 4: JOB ALERTS ============ -->
+        <section class="section" style="background: var(--surface);">
+            <div class="container">
+                <div class="job-alert-banner animate-on-scroll">
+                    <span class="section-subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg> Never Miss Out</span>
+                    <h2 style="margin-bottom: var(--s3);">Get Job Alerts Delivered to Your Inbox</h2>
+                    <p class="section-desc mx-auto">Subscribe to receive personalized job recommendations based on your skills and preferences.</p>
+                    <form style="display: flex; gap: var(--s3); max-width: 500px; margin: var(--s5) auto 0; flex-wrap: wrap;">
+                        <input type="email" class="form-control" placeholder="Enter your email address" style="flex: 1; min-width: 200px;">
+                        <button type="submit" class="btn btn-primary" style="flex-shrink: 0;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 5: TRUSTED BY ============ -->
+        <section style="padding: var(--s7) 0; background: var(--bg); border-top: 1px solid var(--border-light);">
+            <div class="container">
+                <p class="animate-on-scroll" style="text-align: center; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-tertiary); margin-bottom: var(--s5);">Companies hiring on RecruitPro</p>
+                <div class="marquee-wrapper animate-on-scroll animate-delay-1">
+                    <div class="marquee-content">
+                        <span class="brand-logo">Google</span>
+                        <span class="brand-logo">Microsoft</span>
+                        <span class="brand-logo">Amazon</span>
+                        <span class="brand-logo">Meta</span>
+                        <span class="brand-logo">Stripe</span>
+                        <span class="brand-logo">Spotify</span>
+                        <span class="brand-logo" aria-hidden="true">Google</span>
+                        <span class="brand-logo" aria-hidden="true">Microsoft</span>
+                        <span class="brand-logo" aria-hidden="true">Amazon</span>
+                        <span class="brand-logo" aria-hidden="true">Meta</span>
+                        <span class="brand-logo" aria-hidden="true">Stripe</span>
+                        <span class="brand-logo" aria-hidden="true">Spotify</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Recruit<span>Pro</span>.</div>
+                    <p style="max-width: 300px; margin-bottom: var(--s5);">Empowering careers and connecting top-tier talent with the world's most innovative companies since 2018.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">ig</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="employer-dashboard.html">Post a Job</a></li>
+                        <li><a href="candidate-dashboard.html">Candidate Portal</a></li>
+                        <li><a href="coming-soon.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="coming-soon.html">Careers</a></li>
+                        <li><a href="coming-soon.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="coming-soon.html">Privacy Policy</a></li>
+                        <li><a href="coming-soon.html">Terms of Service</a></li>
+                        <li><a href="coming-soon.html">Cookie Policy</a></li>
+                        <li><a href="coming-soon.html">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RecruitPro. All rights reserved.</p>
+                <p>Made with <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; display: inline-block;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>️ for better hiring</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1875rem;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Dashboard Layout
+   ========================================================================== */
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 75px);
+  width: 100%;
+}
+
+.sidebar {
+  width: 280px;
+  background: var(--surface);
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: calc(100vh - 75px);
+  position: sticky;
+  top: 75px;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  padding: var(--s5) var(--s4) var(--s3);
+}
+
+.sidebar-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: var(--s3) var(--s4);
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: all var(--t-fast);
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+  color: var(--primary);
+  background: var(--primary-glow);
+  border-left-color: var(--primary);
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: var(--s6) var(--s5);
+  background: var(--bg);
+  min-width: 0;
+}
+
+.dashboard-stat-card {
+  background: var(--surface);
+  padding: var(--s5);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s6);
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;

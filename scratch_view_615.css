@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Dashboard | RecruitPro</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/dashboard.js" defer></script>
+</head>
+<body>
+
+
+
+    <div class="dashboard-layout">
+        <!-- ============ SIDEBAR ============ -->
+        <aside class="sidebar">
+            <div class="sidebar-header" style="padding: var(--s4); border-bottom: 1px solid var(--border-light);">
+                <a href="index.html" class="nav-brand" style="margin-bottom: var(--s2); display: inline-block;">Recruit<span>Pro</span>.</a>
+                <p style="font-size: 0.8125rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0;">Candidate Portal</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="tab-link active" data-target="overview">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" hei
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--s4);">About Me</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6;">Passionate software engineer with 8+ years of experience in full-stack development, specializing in React, Node.js, and cloud architecture. Proven track record of delivering scalable web applications and leading agile teams.</p>
+                        
+                        <h4 style="margin: var(--s5) 0 var(--s3) 0;">Experience</h4>
+                        <div style="display: flex; flex-direction: column; gap: var(--s4);">
+                            <div style="display: flex; gap: var(--s3); position: relative;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #1A6B4E, #3D9B7A); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">TS</div>
+                                <div>
+                                    <h5 style="margin: 0; font-size: 0.9375rem;">Senior Software Engineer</h5>
+                                    <p style="margin: 2px 0; color: var(--text-secondary); font-size: 0.8125rem;">Tech Solutions Inc. • Full-time</p>
+                                    <p style="margin: 0; color: var(--text-tertiary); font-size: 0.75rem;">Jan 2022 - Present • 4 yrs 6 mos</p>
+                                    <p style="margin: 8px 0 0 0; font-size: 0.875rem; line-height: 1.5; color: var(--text-secondary);">Lead a team of 5 engineers building a microservices architecture using Node.js and AWS. Improved system performance by 40% and reduced deployment times.</p>
+                                </div>

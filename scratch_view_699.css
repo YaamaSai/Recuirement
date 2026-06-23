@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard | RecruitPro</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/dashboard.js" defer></script>
+</head>
+<body>
+
+
+
+    <div class="dashboard-layout">
+        <!-- ============ SIDEBAR ============ -->
+        <aside class="sidebar">
+            <div class="sidebar-header" style="padding: var(--s4); border-bottom: 1px solid var(--border-light);">
+                <a href="index.html" class="nav-brand" style="margin-bottom: var(--s2); display: inline-block;">Recruit<span>Pro</span>.</a>
+                <p style="font-size: 0.8125rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0;">Employer Portal</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="tab-link active" data-target="overview">📊 Overview</a></li>
+                <li><a href="#" class="tab-link" data-target="manage-jobs">📋 Manage Jobs</a></li>
+                <li><a href="#" class="tab-link" data-target="applicants">👥 Applicants</a></li>
+                <li><a href="#" class="tab-link" data-target="post-job">➕ Post New Job</a></li>
+          
+                            <label class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div style="display: flex; gap: var(--s3); align-items: center; margin-top: var(--s4);">
+                            <button class="btn btn-primary">Update Password</button>
+                            <button class="btn btn-secondary">Enable 2FA</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: var(--s5);">
+                    <h3 style="margin-bottom: var(--s4);">Billing & Subscription</h3>
+                    <div style="padding: var(--s4); background: var(--bg); border-radius: var(--r-lg); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--s3);">
+                        <div>
+                            <h4 style="margin-bottom: 2px; color: var(--primary);">Professional Plan</h4>
+                            <p style="margin: 0; font-size: 0.875rem;">$799/month · Renews Jul 1, 2026</p>
+                        </div>
+                        <button class="btn btn-secondary" style="padding: var(--s2) var(--s4); font-size: 0.875rem;">Manage Plan</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: var(--s4);">Team Permissions</h3>
+                    <p>Manage who on your team can post jobs and review applicants.</p>
+                    <button class="btn btn-secondary" style="margin-top: var(--s3);">Invite Team Member</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

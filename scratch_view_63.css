@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for the Senior Frontend Engineer position at TechCorp Inc. on RecruitPro.">
+    <title>Senior Frontend Engineer | RecruitPro</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="../assets/js/main.js" defer></script>
+
+    <style>
+        .apply-sidebar {
+            background: var(--surface);
+            padding: var(--s6);
+            border-radius: var(--r-xl);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+            max-width: 600px;
+            margin: 0 auto var(--s8);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--s2);
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .success-modal {
+            text-align: center;
+            padding: var(--s5) 0;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1A6B4E, #3D9B7A);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+                    }, 50);
+                });
+            }
+
+            // Dynamically load job details from sessionStorage
+            const jobData = sessionStorage.getItem('currentJobApply');
+            if (jobData) {
+                try {
+                    const job = JSON.parse(jobData);
+                    if (job.title) {
+                        document.getElementById('job-header-title').textContent = job.title;
+                        document.title = job.title + ' | RecruitPro';
+                    }
+                    if (job.company) document.getElementById('job-header-company').textContent = job.company;
+                    if (job.logo) {
+                        const logoEl = document.getElementById('job-header-logo');
+                        logoEl.textContent = job.logo;
+                        if (job.logoBg) logoEl.style.background = job.logoBg;
+                    }
+                    if (job.tags && job.tags.length > 0) {
+                        const tagsContainer = document.getElementById('job-header-tags');
+                        tagsContainer.innerHTML = '';
+                        job.tags.forEach(tag => {
+                            const span = document.createElement('span');
+                            span.style = 'background: rgba(255,255,255,0.2); padding: var(--s1) var(--s3); border-radius: var(--r-full); color: white; font-size: 0.875rem;';
+                            span.textContent = tag;
+                            tagsContainer.appendChild(span);
+                        });
+                    }
+                } catch (e) {
+                    console.error("Error parsing job data", e);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

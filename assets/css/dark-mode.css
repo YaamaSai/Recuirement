@@ -1,0 +1,167 @@
+/* ==========================================================================
+   Dark Mode — Full Override v2.0
+   ========================================================================== */
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --bg-alt: #1C1C1E;
+  --surface: #1C1C1E;
+  --surface-raised: #2C2C2E;
+  --text: #F5F5F7;
+  --text-secondary: #A1A1A6;
+  --text-tertiary: #636366;
+  --border: #38383A;
+  --border-light: #2C2C2E;
+  --overlay: rgba(0, 0, 0, 0.7);
+  --primary-subtle: rgba(26, 107, 78, 0.15);
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+  --shadow-xl: 0 16px 48px rgba(0,0,0,0.7);
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Navbar */
+[data-theme="dark"] .navbar {
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+
+/* Cards */
+[data-theme="dark"] .card-glass {
+  background: rgba(44, 44, 46, 0.6);
+  border-color: rgba(255,255,255,0.08);
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .feature-card:hover,
+[data-theme="dark"] .job-card:hover {
+  box-shadow: 0 12px 40px rgba(26, 107, 78, 0.15);
+}
+
+[data-theme="dark"] .testimonial-card:hover {
+  box-shadow: 0 8px 32px rgba(26, 107, 78, 0.12);
+}
+
+/* Buttons */
+[data-theme="dark"] .btn-secondary {
+  background: var(--surface-raised);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  border-color: var(--primary);
+  background: rgba(26, 107, 78, 0.1);
+}
+
+/* Tags */
+[data-theme="dark"] .job-tag {
+  background: var(--bg-alt);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .job-tag.featured {
+  background: rgba(26, 107, 78, 0.2);
+}
+
+/* Testimonials */
+[data-theme="dark"] .testimonial-card {
+  background: var(--surface);
+}
+
+/* Theme Toggle */
+[data-theme="dark"] .theme-toggle-btn {
+  background: var(--surface-raised);
+  border-color: var(--border);
+}
+
+/* Hamburger */
+[data-theme="dark"] .hamburger {
+  color: var(--text);
+}
+
+[data-theme="dark"] .hamburger:hover {
+  background: var(--bg-alt);
+}
+
+/* Process Steps */
+[data-theme="dark"] .process-step {
+  background: var(--surface);
+}
+
+/* Feature Cards */
+[data-theme="dark"] .feature-card {
+  background: var(--surface);
+}
+
+/* Hero */
+[data-theme="dark"] .hero {
+  background: linear-gradient(170deg, var(--bg) 0%, rgba(26, 107, 78, 0.08) 50%, rgba(201, 169, 110, 0.06) 100%);
+}
+
+/* Stat Items */
+[data-theme="dark"] .stat-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Section Subtitle */
+[data-theme="dark"] .section-subtitle {
+  background: linear-gradient(135deg, rgba(26, 107, 78, 0.2), rgba(201, 169, 110, 0.1));
+  border-color: rgba(26, 107, 78, 0.15);
+}
+
+/* Forms Dark Mode */
+[data-theme="dark"] .form-control {
+  background: var(--surface-raised);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+[data-theme="dark"] .form-control:focus {
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="password"],
+[data-theme="dark"] input[type="tel"],
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] input[type="url"],
+[data-theme="dark"] textarea,
+[data-theme="dark"] .split-auth-input {
+  border-color: var(--border) !important;
+}
+
+[data-theme="dark"] input[type="text"]:focus,
+[data-theme="dark"] input[type="email"]:focus,
+[data-theme="dark"] input[type="password"]:focus,
+[data-theme="dark"] input[type="tel"]:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] .split-auth-input:focus {
+  border-color: var(--primary) !important;
+}
+
+/* Footer Dark Mode  */
+[data-theme="dark"] .footer {
+  background: linear-gradient(180deg, #0a0a0a, #000000);
+}
+
+/* Nav Dropdown Dark */
+[data-theme="dark"] .nav-dropdown-content {
+  background: var(--surface-raised);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .nav-dropdown-content a:hover {
+  background: var(--primary-subtle);
+}
+
+/* Icon backgrounds in dark mode */
+[data-theme="dark"] .icon-blue { background: linear-gradient(135deg, rgba(0, 122, 255, 0.2), rgba(0, 122, 255, 0.08)); }
+[data-theme="dark"] .icon-green { background: linear-gradient(135deg, rgba(45, 139, 106, 0.2), rgba(45, 139, 106, 0.08)); }
+[data-theme="dark"] .icon-purple { background: linear-gradient(135deg, rgba(107, 91, 149, 0.2), rgba(107, 91, 149, 0.08)); }
+[data-theme="dark"] .icon-orange { background: linear-gradient(135deg, rgba(212, 168, 67, 0.2), rgba(212, 168, 67, 0.08)); }

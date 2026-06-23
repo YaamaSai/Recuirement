@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for the Senior Frontend Engineer position at TechCorp Inc. on RecruitPro.">
+    <title>Senior Frontend Engineer | RecruitPro</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="../assets/js/main.js" defer></script>
+
+    <style>
+        .job-detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--s8);
+            margin-top: var(--s6);
+            margin-bottom: var(--s8);
+        }
+        
+        .job-detail-content h3 {
+            margin-top: var(--s6);
+            margin-bottom: var(--s3);
+            font-size: 1.5rem;
+            color: var(--text);
+        }
+        
+        .job-detail-content p, .job-detail-content ul {
+            margin-bottom: var(--s4);
+            color: var(--text-secondary);
+        }
+        
+        .job-detail-content ul {
+            padding-left: var(--s5);
+        }
+        
+        .job-detail-content li {
+            margin-bottom: var(--s2);
+        }
+        
+        .apply-sidebar {
+            background: var(--surface);
+            padding: var(--s6);
+
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="coming-soon.html">Privacy Policy</a></li>
+                        <li><a href="coming-soon.html">Terms of Service</a></li>
+                        <li><a href="coming-soon.html">Cookie Policy</a></li>
+                        <li><a href="coming-soon.html">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RecruitPro. All rights reserved.</p>
+                <p>Made with ❤️ for better hiring</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Intercept Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('job-application-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent page reload
+                    
+                    // Hide the form container
+                    document.getElementById('apply-form-container').style.display = 'none';
+                    
+                    // Show the success message with a slight animation
+                    const successModal = document.getElementById('success-message');
+                    successModal.style.display = 'block';
+                    successModal.style.opacity = '0';
+                    setTimeout(() => {
+                        successModal.style.transition = 'opacity 0.5s ease';
+                        successModal.style.opacity = '1';
+                    }, 50);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
